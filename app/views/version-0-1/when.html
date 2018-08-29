@@ -1,0 +1,146 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "what.html"
+      }) }}
+   </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Find data about a local area</span>   
+
+      {% set rangeHtml %}
+        {{ govukDateInput({
+          id: "range-from",
+          name: "range-from",
+          fieldset: {
+            legend: {
+              text: "When would you like to measure from?"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          },
+          items: [
+            {
+              name: "day"
+            },
+            {
+              name: "month"
+            },
+            {
+              name: "year"
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "range-to",
+          name: "range-to",
+          fieldset: {
+            legend: {
+              text: "When would you like to measure to?"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          },
+          items: [
+            {
+              name: "day"
+            },
+            {
+              name: "month"
+            },
+            {
+              name: "year"
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+      {% set snapshotHtml %}
+          {{ govukDateInput({
+            id: "snapshot-date",
+            name: "snapshot-date",
+            fieldset: {
+              legend: {
+                text: "What date would you like to view data for?"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
+            },
+            items: [
+              {
+                name: "day"
+              },
+              {
+                name: "month"
+              },
+              {
+                name: "year"
+              }
+            ]
+          }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "when-choice",
+        name: "when-choice",
+        fieldset: {
+          legend: {
+            text: "When would you like to view data for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "time-period",
+            text: "Show data over a period of time",
+            conditional: {
+              html: rangeHtml
+            }
+          },
+          {
+            value: "specific-date",
+            text: "Show data at a specific date",
+            conditional: {
+              html: snapshotHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "churchill-main.html"
+      }) }}
+
+    </div>
+</div>
+
+{% endblock %}

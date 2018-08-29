@@ -1,0 +1,120 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "where-2.html"
+      }) }}
+   </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Find data about a local area</span>   
+      <h1 class="govuk-heading-xl">What data to measure</h1>   
+
+      {{ govukSelect({
+        id: "data-list",
+        name: "data-list",
+        label: {
+          text: "What type of data would you like to measure?"
+        },
+        items: [
+          {
+            value: "-",
+            text: "Please select",
+            selected: true
+          },
+          {
+            value: "active-enterprises",
+            text: "Active Enterprises"
+          },
+          {
+            value: "attendance-allowance",
+            text: "Attendance Allowance"
+          },
+          {
+            value: "carers-allowance",
+            text: "Carers Allowance"
+          },
+          {
+            value: "claimant-count",
+            text: "Claimant Count"
+          }
+        ]
+      }) }}
+
+      {{ govukSelect({
+        id: "data-list",
+        name: "data-list",
+        label: {
+          text: "How would you like to measure this data?"
+        },
+        items: [
+          {
+            value: "-",
+            text: "Please select",
+            selected: true
+          },
+          {
+            value: "number",
+            text: "Number of people"
+          },
+          {
+            value: "percentage",
+            text: "Percentage of people"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "add-more-datatypes",
+        name: "add-more-datatypes",
+        fieldset: {
+          legend: {
+            text: "Would you like to compare this to another type of data?"
+          }
+        },
+        hint: {
+          text: "This will help you to look at possible cause and effect relationships."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "when.html"
+      }) }}
+
+    </div>
+</div>
+
+{% endblock %}
