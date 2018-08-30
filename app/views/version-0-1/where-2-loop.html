@@ -30,6 +30,9 @@
 
       <span class="govuk-caption-xl">Find data about a local area</span>     
       <h1 class="govuk-heading-xl">Where to measure data for</h1>    
+
+    </div>
+    <div class="govuk-grid-column-two-thirds">
       
       {{ govukSelect({
         id: "where",
@@ -95,8 +98,9 @@
       }) }}
 
     </div>
-    <div class="govuk-grid-column-one-third sidebar-top-spacer">
+    <div class="govuk-grid-column-one-third">
         {{ govukTable({
+          classes: "govuk-!-margin-bottom-2",
           caption: "Areas you've chosen",
           captionClasses: "govuk-heading-m",
           rows: [
@@ -105,27 +109,28 @@
                 html: "Aberdeen City"
               },
               {
-                html: "<a href=\"#\">Remove</a>"
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
               }
             ],
             [
               {
-                html: "Buckinghamshire"
+                html: "Camden"
               },
               {
-                html: "<a href=\"#\">Remove</a>"
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
               }
             ],
             [
               {
-                html: "Tyne and Wear"
+                html: "South Tyneside"
               },
               {
-                html: "<a href=\"#\">Remove</a>"
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
               }
             ]
           ]
         }) }}
+        <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
     </div>
 </div>
 

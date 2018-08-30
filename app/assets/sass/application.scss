@@ -15,6 +15,7 @@ $govuk-global-styles: true;
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .top-alignment-correct { margin-top:-30px; margin-bottom:40px; }
-.sidebar-top-spacer { margin-top:130px; }
+.text-right { text-align: right; }
+.right { float:right; }
 
 .churchill-wide-screen { width:100%; }

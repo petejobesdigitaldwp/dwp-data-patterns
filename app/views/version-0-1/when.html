@@ -28,7 +28,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Find data about a local area</span>   
+      <span class="govuk-caption-xl">Find data about a local area</span>  
+      <h1 class="govuk-heading-xl">When would you like to view data for?</h1>
+      
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
       {% set rangeHtml %}
         {{ govukDateInput({
@@ -111,11 +118,6 @@
         idPrefix: "when-choice",
         name: "when-choice",
         fieldset: {
-          legend: {
-            text: "When would you like to view data for?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
         },
         items: [
           {
@@ -140,6 +142,59 @@
         href: "churchill-main.html"
       }) }}
 
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    {{ govukTable({
+      classes: "govuk-!-margin-bottom-2",
+      caption: "What you're measuring",
+      captionClasses: "govuk-heading-m",
+      rows: [
+        [
+          {
+            html: "<strong>Carers allowance</strong><br>(Number of people)"
+          },
+          {
+            html: "<a href=\"#\" class=\"right\">Change</a>"
+          }
+        ]
+      ]
+    }) }}
+    <p class="govuk-!-margin-bottom-7"><a href="#">Add another statistic</a></p>
+
+    {{ govukTable({
+      classes: "govuk-!-margin-bottom-2",
+      caption: "Areas you've chosen",
+      captionClasses: "govuk-heading-m",
+      rows: [
+        [
+          {
+            html: "Aberdeen City"
+          },
+          {
+            html: "<a href=\"#\" class=\"right\">Remove</a>"
+          }
+        ],
+        [
+          {
+            html: "Camden"
+          },
+          {
+            html: "<a href=\"#\" class=\"right\">Remove</a>"
+          }
+        ],
+        [
+          {
+            html: "South Tyneside"
+          },
+          {
+            html: "<a href=\"#\" class=\"right\">Remove</a>"
+          }
+        ]
+      ]
+    }) }}
+    <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
     </div>
 </div>
 
