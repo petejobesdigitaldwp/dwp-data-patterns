@@ -47,12 +47,9 @@
             }
           },
           hint: {
-            text: "For example, 31 3 1980"
+            text: "For example, 3 1980"
           },
           items: [
-            {
-              name: "day"
-            },
             {
               name: "month"
             },
@@ -71,12 +68,10 @@
             }
           },
           hint: {
-            text: "For example, 31 3 1980"
+            text: "For example, 3 1980"
           },
           items: [
-            {
-              name: "day"
-            },
+            
             {
               name: "month"
             },
@@ -97,12 +92,10 @@
               }
             },
             hint: {
-              text: "For example, 31 3 1980"
+              text: "For example, 3 1980"
             },
             items: [
-              {
-                name: "day"
-              },
+              
               {
                 name: "month"
               },
@@ -146,55 +139,55 @@
 
     <div class="govuk-grid-column-one-third">
 
-    {{ govukTable({
-      classes: "govuk-!-margin-bottom-2",
-      caption: "What you're measuring",
-      captionClasses: "govuk-heading-m",
-      rows: [
-        [
-          {
-            html: "<strong>Carers allowance</strong><br>(Number of people)"
-          },
-          {
-            html: "<a href=\"#\" class=\"right\">Change</a>"
-          }
-        ]
-      ]
-    }) }}
-    <p class="govuk-!-margin-bottom-7"><a href="#">Add another statistic</a></p>
+        {{ govukTable({
+          classes: "govuk-!-margin-bottom-2",
+          caption: "Where you've chosen",
+          captionClasses: "govuk-heading-m",
+          rows: [
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
+            ],
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
+            ],
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
+            ]
+          ]
+        }) }}
+        <p class="govuk-!-margin-bottom-7"><a href="where-2-loop.html" class="govuk-!-margin-bottom-6">Add another area</a></p>
 
-    {{ govukTable({
-      classes: "govuk-!-margin-bottom-2",
-      caption: "Areas you've chosen",
-      captionClasses: "govuk-heading-m",
-      rows: [
-        [
-          {
-            html: "Aberdeen City"
-          },
-          {
-            html: "<a href=\"#\" class=\"right\">Remove</a>"
-          }
-        ],
-        [
-          {
-            html: "Camden"
-          },
-          {
-            html: "<a href=\"#\" class=\"right\">Remove</a>"
-          }
-        ],
-        [
-          {
-            html: "South Tyneside"
-          },
-          {
-            html: "<a href=\"#\" class=\"right\">Remove</a>"
-          }
-        ]
-      ]
-    }) }}
-    <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
+        {{ govukTable({
+          classes: "govuk-!-margin-bottom-2",
+          caption: "What you're measuring",
+          captionClasses: "govuk-heading-m",
+          rows: [
+            [
+              {
+                html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong>"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Change</a>"
+              }
+            ]
+          ]
+        }) }}
+        <p class="govuk-!-margin-bottom-7"><a href="what-loop.html">Add another statistic</a></p>
     </div>
 </div>
 
