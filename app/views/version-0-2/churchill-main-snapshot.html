@@ -1,0 +1,59 @@
+
+{% extends "layout-wide.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+</div>
+<div class="govuk-extra-width-container">
+
+<div class="top-alignment-correct">
+  <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+      beta
+    </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your
+          <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+    {% include "version-0-2/dropdown-navigation.html" %}
+
+ </div>
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Find data about a local area</span>
+        <h1 class="govuk-heading-l govuk-!-font-weight-regular">
+            Number of 18 to 24 year old males entitled to <strong>Carers Allowance</strong> in selected <strong>Local Authorities</strong>
+        </h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+        <ul class="big-stat-list govuk-heading-m">
+          <li>61 <span class="govuk-!-font-weight-regular">in</span> Aberdeen City</li>
+          <li>122 <span class="govuk-!-font-weight-regular">in</span> Camden</li>
+          <li>186 <span class="govuk-!-font-weight-regular">in</span> South Tyneside</li>
+        </ul>
+        <img src="../../public/images/bar-chart.png" class="full-width-image govuk-!-margin-bottom-5"/>
+        
+      </div>
+
+    <div class="govuk-grid-column-one-third">
+ 
+        <p><a href="#">Add another type of data for comparisson</a></p>
+        <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
+
+    </div>
+</div>
+
+
+{% endblock %}

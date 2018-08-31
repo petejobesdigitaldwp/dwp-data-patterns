@@ -12,6 +12,99 @@ $govuk-global-styles: true;
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
+/*** GLOBAL NAV DWP CLASSES ***/
+
+#global-header-bar {
+    display: none;
+  }
+  
+  .navigation-global ul:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  .navigation-global {
+    background: #dee0e2;
+  }
+  
+  .navigation-global ul {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+  
+  .navigation-global li {
+    float: left;
+    list-style-type: none;
+  }
+  
+  @media (max-width: 640px) {
+    .navigation-global li {
+      width: 100%;
+    }
+  }
+  
+  .navigation-global a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  .navigation-global a:link,
+  .navigation-global a:visited {
+    color: #0b0c0c;
+  }
+  
+  .navigation-global a:active,
+  .navigation-global a:focus {
+    background: #ffbf47;
+    color: #0b0c0c;
+  }
+  
+  .navigation-global a:hover {
+    background: #f8f8f8;
+    text-decoration: underline;
+  }
+  
+  .navigation-global .active {
+    background: #005ea5;
+    border-bottom: 0;
+    font-weight: 700;
+  }
+  
+  .navigation-global .active:link,
+  .navigation-global .active:visited,
+  .navigation-global .active:active {
+    color: #fff;
+  }
+  
+  .navigation-global .active:focus {
+    color: #0b0c0c;
+  }
+  
+  .navigation-global .active:hover {
+    background: #005ea5;
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+
+/*** GLOBAL NAV CUSTOM EXTENDED CLASSES ***/
+
+.navigation-global ul {
+    margin: 0 auto;
+    max-width: 100%;
+    padding:0px;
+  }
+
+#where-dropdown { display:none; }
+#what-dropdown { display:none; }
+#when-dropdown { display:none; }
+
+.dropdown { border-bottom:2px solid #005ea5; border-top:2px solid #005ea5; padding:15px; background-color: #f8f8f8;  }
+
+.dropdown-block { display:inline-block; width:50%; max-width: 400px; }
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .top-alignment-correct { margin-top:-30px; margin-bottom:40px; }
@@ -29,3 +122,5 @@ $govuk-global-styles: true;
 .key-cube { width: 15px; height: 15px; display:inline-block; margin-right:10px; }
 
 .big-stat-list { background-color:#28A17F; color:#FFFFFF; list-style: none; padding:1em; line-height: 160%; }
+
+.map-key { list-style: None; padding-left:0; line-height: 160%; }
