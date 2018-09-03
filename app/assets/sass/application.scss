@@ -97,19 +97,26 @@ $govuk-global-styles: true;
     padding:0px;
   }
 
+.navigation-global a:hover {
+    background: #005ea5;
+    text-decoration: underline;
+    color:#FFF;
+  }
+
 #where-dropdown { display:none; }
 #what-dropdown { display:none; }
 #when-dropdown { display:none; }
 
 .dropdown { border-bottom:2px solid #005ea5; border-top:2px solid #005ea5; padding:15px; background-color: #f8f8f8;  }
 
-.dropdown-block { display:inline-block; width:50%; max-width: 400px; }
+.dropdown-block { width:50%; max-width: 400px; float:left; }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .top-alignment-correct { margin-top:-30px; margin-bottom:40px; }
 .text-right { text-align: right; }
 .right { float:right; }
+.clearfix { clear: both; }
 
 #conditional-display { display:none; }
 .link-beneath-select { margin-top: -20px !important; }
