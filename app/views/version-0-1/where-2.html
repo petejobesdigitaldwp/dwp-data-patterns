@@ -34,8 +34,10 @@
       {{ govukSelect({
         id: "where",
         name: "where",
+        classes: "js-example-basic-single",
         label: {
-          text: "What local authority would you like to measure data for?"
+          text: "What local authority would you like to measure data for?",
+          classes: "govuk-label--m"
         },
         items: [
           {
@@ -72,7 +74,8 @@
         name: "add-more-areas",
         fieldset: {
           legend: {
-            text: "Would you like to compare this to another area?"
+            text: "Would you like to compare this to another area?",
+            classes: "govuk-label--m"
           }
         },
         hint: {
@@ -97,5 +100,12 @@
 
     </div>
 </div>
+
+<script ="text/javascript">
+// In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 
 {% endblock %}

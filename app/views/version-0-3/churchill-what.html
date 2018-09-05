@@ -1,45 +1,70 @@
 
-{% extends "layout.html" %}
+{% extends "layout-wide.html" %}
 
 {% block pageTitle %}
   Churchill | Find data about a local area
 {% endblock %}
 
 {% block content %}
+</div>
+<div class="govuk-extra-width-container">
 
 <div class="top-alignment-correct">
-    <div class="govuk-phase-banner">
-        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
-        beta
-      </strong>
-          <span class="govuk-phase-banner__text">
-            This is a new service – your
-            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-          </span>
-        </p>
-      </div>
+  <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+      beta
+    </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your
+          <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
 
-      {{ govukBackLink({
-        text: "Back",
-        href: "where-2.html"
-      }) }}
-   </div>
+    <nav class="navigation-secondary">
+        <ul>
+          <li>
+            <a href="churchill-where.html" id="where-link">Where you're looking at</a>
+          </li>
+      
+          <li>
+            <a href="churchill-what.html" aria-current="section" class="active" id="what-link">What you're measuring</a>
+          </li>
+      
+          <li>
+            <a href="churchill-when.html" id="when-link">When you're measuring</a>
+          </li>
+  
+          <li>
+            <a href="churchill-main.html" id="where-link">Your data</a>
+          </li>
+        </ul>
+      </nav>
+
+  </div>
+
+
+
+
+<div class="govuk-width-container">
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Find data about a local area</span>   
-      <h1 class="govuk-heading-xl">What data to measure</h1>  
-
-      </div>
       <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            What you're measuring
+        </h1>
+      </div>
+    </div>
 
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
           {{ govukSelect({
             id: "measure-select",
             classes: "measure-select",
             name: "measure-select",
             label: {
-              text: "What type of data would you like to measure?",
+              text: "What type of data would you like to compare this to?",
               classes: "govuk-label--m"
             },
             items: [
@@ -185,72 +210,40 @@
                 ]
               }) }}
           </div>
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "add-more-datatypes",
-        name: "add-more-datatypes",
-        fieldset: {
-          legend: {
-            text: "Would you like to compare this to another type of data?",
-            classes: "govuk-label--m"
-          }
-        },
-        hint: {
-          text: "This will help you to look at possible cause and effect relationships."
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-      {{ govukButton({
-        text: "Continue",
-        href: "when.html"
-      }) }}
-
-
-    </div>
-    <div class="govuk-grid-column-one-third">
-        {{ govukTable({
-          classes: "govuk-!-margin-bottom-2",
-          caption: "Where you've chosen",
-          captionClasses: "govuk-heading-m",
-          rows: [
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
+    
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "add-more-datatypes",
+            name: "add-more-datatypes",
+            fieldset: {
+              legend: {
+                text: "Would you like to add another type of data to this comparison?",
+                classes: "govuk-label--m"
               }
-            ],
-            [
+            },
+            hint: {
+              text: "This will help you to look at possible cause and effect relationships."
+            },
+            items: [
               {
-                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
+                value: "yes",
+                text: "Yes"
               },
               {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
+                value: "no",
+                text: "No"
               }
             ]
-          ]
-        }) }}
-        <p class="govuk-!-margin-bottom-7"><a href="where-2-loop.html" class="govuk-!-margin-bottom-6">Add another area</a></p>
+          }) }}
+    
+          {{ govukButton({
+            text: "Continue",
+            href: "when.html"
+          }) }}
+
+      </div>
+
+    <div class="govuk-grid-column-one-third">
 
         {{ govukTable({
           classes: "govuk-!-margin-bottom-2",
@@ -267,7 +260,10 @@
             ]
           ]
         }) }}
+
     </div>
+</div>
+
 </div>
 
 <script type="text/javascript" >

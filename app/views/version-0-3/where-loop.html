@@ -1,0 +1,130 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "index.html"
+      }) }}
+   </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Where the data is for
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p>You have chosen to compare data for local authorities. You can also choose to <a href="where.html">view data from other types of area</a>.</p>
+
+        {{ govukSelect({
+          id: "where",
+          name: "where",
+          label: {
+            text: "What local authority would you like to compare?",
+            classes: "govuk-label--m"
+          },
+          items: [
+            {
+              value: "aberdeen-city",
+              text: "Aberdeen City"
+            },
+            {
+              value: "aberdeenshire",
+              text: "Aberdeenshire"
+            },
+            {
+              value: "adur",
+              text: "Adur"
+            },
+            {
+              value: "allerdale",
+              text: "Allerdale"
+            },
+            {
+              value: "amber-valley",
+              text: "Amber Valley"
+            },
+            {
+              value: "angus",
+              text: "Angus"
+            }
+          ]
+        }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "add-more-areas",
+        name: "add-more-areas",
+        fieldset: {
+          legend: {
+            text: "Would you like to add another area to this comparison?",
+            classes: "govuk-label--m"
+          }
+        },
+        hint: {
+          text: "You can select up to ten areas to compare."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "what.html"
+      }) }}
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukTable({
+        classes: "govuk-!-margin-bottom-2",
+        caption: "Where you've chosen",
+        captionClasses: "govuk-heading-m",
+        rows: [
+          [
+            {
+              html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
+            },
+            {
+              html: "<a href=\"#\" class=\"right\">Remove</a>"
+            }
+          
+          ]
+        ]
+      }) }}
+    </div>
+</div>
+
+{% endblock %}
+

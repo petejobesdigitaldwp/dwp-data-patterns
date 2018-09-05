@@ -21,14 +21,13 @@
 
       {{ govukBackLink({
         text: "Back",
-        href: "where-2.html"
+        href: "where.html"
       }) }}
    </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Find data about a local area</span>   
       <h1 class="govuk-heading-xl">What data to measure</h1> 
     </div>
     </div>
@@ -41,7 +40,7 @@
         classes: "measure-select",
         name: "measure-select",
         label: {
-          text: "What type of data would you like to measure?",
+          text: "What type of data would you like to compare this to?",
           classes: "govuk-label--m"
         },
         items: [
@@ -194,7 +193,7 @@
         name: "add-more-datatypes",
         fieldset: {
           legend: {
-            text: "Would you like to compare this to another type of data?",
+            text: "Would you like to add another type of data to this comparison?",
             classes: "govuk-label--m"
           }
         },
@@ -222,36 +221,19 @@
     <div class="govuk-grid-column-one-third">
         {{ govukTable({
           classes: "govuk-!-margin-bottom-2",
-          caption: "Where you've chosen",
+          caption: "What you're measuring",
           captionClasses: "govuk-heading-m",
           rows: [
             [
               {
-                html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
+                html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong>"
               },
               {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
+                html: "<a href=\"#\" class=\"right\">Change</a>"
               }
             ]
           ]
         }) }}
-        <p class="govuk-!-margin-bottom-7"><a href="where-2-loop.html" class="govuk-!-margin-bottom-6">Add another area</a></p>
     </div>
 </div>
 
