@@ -27,14 +27,24 @@
 
    {% include "version-0-4/what.html" %}
 
-   {{ govukButton({
-    text: "Continue",
-    href: "when.html"
-  }) }}
+   <a href="#" class="govuk-button" id="continue-button">
+    Continue
+  </a>
+
+  <script type="text/javascript">
+    document.getElementById("add-more-datatypes-1").onclick = function () {
+      document.getElementById("continue-button").href="how-where-what-loop.html"; 
+    }
+
+    document.getElementById("add-more-datatypes-2").onclick = function() {
+      document.getElementById("continue-button").href="when.html"; 
+    };
+</script>
+
 
 </div>
 <div class="govuk-grid-column-one-third">
-    
+  
 </div>
 </div>
 

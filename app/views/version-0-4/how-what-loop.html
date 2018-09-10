@@ -40,10 +40,26 @@
         document.getElementById("continue-button").href="how-what-where.html"; 
       };
   </script>
-
 </div>
 <div class="govuk-grid-column-one-third">
-    
+    {{ govukTable({
+      classes: "govuk-!-margin-bottom-2",
+      caption: "What you're measuring",
+      captionClasses: "govuk-heading-m",
+      rows: [
+        [
+          {
+            html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong>"
+          },
+          {
+            html: "<a href=\"#\" class=\"right\">Change</a>"
+          }
+        ]
+      ]
+    }) }}
+    <p class="govuk-!-margin-bottom-7"><a href="what-loop.html">Add another statistic</a></p>
+
+  
 </div>
 </div>
 
