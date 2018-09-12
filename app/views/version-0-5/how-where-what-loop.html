@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "how-where.html"
+      }) }}
+   </div>
+
+   {% include "version-0-5/what.html" %}
+
+   <a href="#" class="govuk-button" id="continue-button">
+    Continue
+  </a>
+
+  <script type="text/javascript">
+    document.getElementById("add-more-datatypes-1").onclick = function () {
+      document.getElementById("continue-button").href="how-where-what-loop.html"; 
+    }
+
+    document.getElementById("add-more-datatypes-2").onclick = function() {
+      document.getElementById("continue-button").href="churchill-main.html"; 
+    };
+</script>
+
+
+</div>
+<div class="govuk-grid-column-one-third">
+    {{ govukTable({
+      classes: "govuk-!-margin-bottom-2",
+      caption: "What you're measuring",
+      captionClasses: "govuk-heading-m",
+      rows: [
+        [
+          {
+            html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong>, May 2007 - May 2017."
+          },
+          {
+            html: "<a href=\"#\" class=\"right\">Change</a>"
+          }
+        ]
+      ]
+    }) }}
+    <p class="govuk-!-margin-bottom-7"><a href="what-loop.html">Add another statistic</a></p>
+
+
+
+</div>
+</div>
+
+<script type="text/javascript" >
+document.getElementById('measure-select').addEventListener('change', function () {
+  var style = this.value == 'carers-allowance' ? 'block' : 'none';
+  document.getElementById('conditional-display').style.display = style;
+});
+</script>
+
+  
+{% endblock %}
+

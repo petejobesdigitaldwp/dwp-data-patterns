@@ -1,0 +1,202 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "#"
+      }) }}
+   </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">When would you like to view data for?</h1>
+      
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+      {% set rangeHtml %}
+        {{ govukDateInput({
+          id: "range-from",
+          name: "range-from",
+          fieldset: {
+            legend: {
+              text: "When would you like to measure from?"
+            }
+          },
+          hint: {
+            text: "For example, 3 1980"
+          },
+          items: [
+            {
+              name: "month"
+            },
+            {
+              name: "year"
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "range-to",
+          name: "range-to",
+          fieldset: {
+            legend: {
+              text: "When would you like to measure to?"
+            }
+          },
+          hint: {
+            text: "For example, 3 1980"
+          },
+          items: [
+            
+            {
+              name: "month"
+            },
+            {
+              name: "year"
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+      {% set snapshotHtml %}
+          {{ govukDateInput({
+            id: "snapshot-date",
+            name: "snapshot-date",
+            fieldset: {
+              legend: {
+                text: "What date would you like to view data for?"
+              }
+            },
+            hint: {
+              text: "For example, 3 1980"
+            },
+            items: [
+              
+              {
+                name: "month"
+              },
+              {
+                name: "year"
+              }
+            ]
+          }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "when-choice",
+        name: "when-choice",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "time-period",
+            text: "Show data over a period of time",
+            conditional: {
+              html: rangeHtml
+            }
+          },
+          {
+            value: "specific-date",
+            text: "Show data at a specific date",
+            conditional: {
+              html: snapshotHtml
+            }
+          }
+        ]
+      }) }}
+
+      <a href="#" class="govuk-button" id="continue-button">
+        Continue
+      </a>
+
+      <script type="text/javascript">
+          document.getElementById("when-choice-1").onclick = function () {
+            document.getElementById("continue-button").href="churchill-main.html"; 
+          }
+
+          document.getElementById("when-choice-2").onclick = function() {
+            document.getElementById("continue-button").href="churchill-main-snapshot.html"; 
+          };
+      </script>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      {{ govukTable({
+        classes: "govuk-!-margin-bottom-2",
+        caption: "Where you've chosen",
+        captionClasses: "govuk-heading-m",
+        rows: [
+          [
+            {
+              html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
+            },
+            {
+              html: "<a href=\"#\" class=\"right\">Remove</a>"
+            }
+          ],
+          [
+            {
+              html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
+            },
+            {
+              html: "<a href=\"#\" class=\"right\">Remove</a>"
+            }
+          ],
+          [
+            {
+              html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
+            },
+            {
+              html: "<a href=\"#\" class=\"right\">Remove</a>"
+            }
+          ]
+        ]
+      }) }}
+      <p class="govuk-!-margin-bottom-7"><a href="where-2-loop.html" class="govuk-!-margin-bottom-6">Add another area</a></p>
+
+      {{ govukTable({
+  classes: "govuk-!-margin-bottom-2",
+  caption: "What you're measuring",
+  captionClasses: "govuk-heading-m",
+  rows: [
+    [
+      {
+        html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong>"
+      },
+      {
+        html: "<a href=\"#\" class=\"right\">Change</a>"
+      }
+    ]
+  ]
+}) }}
+<p class="govuk-!-margin-bottom-7"><a href="what-loop.html">Add another statistic</a></p>
+        
+    </div>
+</div>
+
+{% endblock %}

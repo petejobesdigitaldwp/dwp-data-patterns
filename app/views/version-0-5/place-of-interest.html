@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+      {{ govukBackLink({
+        text: "Back",
+        href: "how-where.html"
+      }) }}
+
+
+   </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Local authorities</span>
+      <h1 class="govuk-heading-xl">Aberdeen City</h1>
+      
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="positive-stat-box">
+                <h2 class="govuk-heading-l white">This box would be present if there's a measure on which Aberdeen City is amongst the worst or best in the country</h2>
+                
+              </div>
+              <p class="govuk-!-margin-top-2">Source: <a href="#">NomisWeb</a></p>
+      <p>This page will contain content on what is exceptional about Aberdeen City. This is done by looking at the outliers; on what measures is it performing particularly badly or particularly well? Are any other elements of the data particularly noticeable when checked by AI?</p>
+  
+      
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Ways to find out more</h3>
+
+        <ul>
+            <li><a href="how-where-loop.html">Compare to other areas</a></li>
+            <li><a href="how-where-what.html">See data for specific subjects</a></li>
+          </ul>
+        
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,270 @@
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Where the data is for
+      </h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      {% set localAuthoritiesHtml %}
+        {{ govukSelect({
+          id: "where",
+          name: "where",
+          label: {
+            text: "What local authority would you like to measure data for?"
+          },
+          items: [
+            {
+              value: "aberdeen-city",
+              text: "Aberdeen City"
+            },
+            {
+              value: "aberdeenshire",
+              text: "Aberdeenshire"
+            },
+            {
+              value: "adur",
+              text: "Adur"
+            },
+            {
+              value: "allerdale",
+              text: "Allerdale"
+            },
+            {
+              value: "amber-valley",
+              text: "Amber Valley"
+            },
+            {
+              value: "angus",
+              text: "Angus"
+            }
+          ]
+        }) }}
+      {% endset %}
+
+      {% set localEnterprisePartnershipsHtml %}
+        {{ govukSelect({
+          id: "where",
+          name: "where",
+          label: {
+            text: "What local enterprise partnership would you like to measure data for?"
+          },
+          items: [
+            {
+              value: "black-country",
+              text: "Black Country"
+            },
+            {
+              value: "cheshire-warrington",
+              text: "Cheshire and Warrington"
+            },
+            {
+              value: "cumbria",
+              text: "Cumbria"
+            },
+            {
+              value: "dorset",
+              text: "Dorset"
+            },
+            {
+              value: "solent",
+              text: "Solent"
+            },
+            {
+              value: "west-of-england",
+              text: "West of England"
+            }
+          ]
+        }) }}
+      {% endset %}
+
+      {% set parliamentaryConstituenciesHtml %}
+        {{ govukSelect({
+          id: "where",
+          name: "where",
+          label: {
+            text: "What Westminister Parliamentary constituency would you like to measure data for?"
+          },
+          items: [
+            {
+              value: "aberavon",
+              text: "Aberavon"
+            },
+            {
+              value: "aylesbury",
+              text: "Aylesbury"
+            },
+            {
+              value: "banbury",
+              text: "Banbury"
+            },
+            {
+              value: "blyth-valley",
+              text: "Blyth Valley"
+            },
+            {
+              value: "chichester",
+              text: "Chichester"
+            },
+            {
+              value: "coventry-south",
+              text: "Coventry South"
+            }
+          ]
+        }) }}
+      {% endset %}
+
+      {% set govOfficeRegionsHtml %}
+        {{ govukSelect({
+          id: "where",
+          name: "where",
+          label: {
+            text: "What government office region would you like to measure data for?"
+          },
+          items: [
+            {
+              value: "east-midlands",
+              text: "East Midlands"
+            },
+            {
+              value: "east-of-england",
+              text: "East of England"
+            },
+            {
+              value: "london",
+              text: "London"
+            },
+            {
+              value: "north-east",
+              text: "North East"
+            },
+            {
+              value: "north-west",
+              text: "North West"
+            },
+            {
+              value: "scotland",
+              text: "Scotland"
+            },
+            {
+              value: "south-east",
+              text: "South East"
+            },
+            {
+              value: "South-west",
+              text: "South West"
+            },
+            {
+              value: "wales",
+              text: "Wales"
+            },
+            {
+              value: "west-midlands",
+              text: "West Midlands"
+            }
+          ]
+        }) }}
+      {% endset %}
+
+      {% set countriesHtml %}
+        {{ govukSelect({
+          id: "where",
+          name: "where",
+          label: {
+            text: "What country would you like to measure data for?"
+          },
+          items: [
+            {
+              value: "england",
+              text: "England"
+            },
+            {
+              value: "scotland",
+              text: "Scotland"
+            },
+            {
+              value: "wales",
+              text: "Wales"
+            }
+          ]
+        }) }}
+      {% endset %}
+
+
+      {{ govukRadios({
+        idPrefix: "what-area-type",
+        name: "what-area-type",
+        fieldset: {
+          legend: {
+            text: "What type of area would you like to find data about?",
+            isPageHeading: false,
+            classes: "govuk-label--m"
+          }
+        },
+        items: [
+          {
+            value: "local-authorities",
+            text: "Local Authorities",
+            conditional: {
+              html: localAuthoritiesHtml
+            }
+          },
+          {
+            value: "local-enterprise-partnerships",
+            text: "Local Enterprise Partnerships",
+            conditional: {
+              html: localEnterprisePartnershipsHtml
+            }
+          },
+          {
+            value: "westminister-parliamentary-constituencies",
+            text: "Westminister Parliamentary Constituencies",
+            conditional: {
+              html: parliamentaryConstituenciesHtml
+            }
+          },
+          {
+            value: "government-office-regions",
+            text: "Government Office Regions",
+            conditional: {
+              html: govOfficeRegionsHtml
+            }
+          },
+          {
+            value: "countries",
+            text: "Countries",
+            conditional: {
+              html: countriesHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "add-more-areas",
+        name: "add-more-areas",
+        fieldset: {
+          legend: {
+            text: "Would you like to compare this to another area?",
+            classes: "govuk-label--m"
+          }
+        },
+        hint: {
+          text: "You can select up to ten areas to compare."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
