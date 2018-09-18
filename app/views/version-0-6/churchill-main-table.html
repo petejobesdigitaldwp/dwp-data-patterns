@@ -1,0 +1,654 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+
+<div class="top-alignment-correct">
+  <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+      beta
+    </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your
+          <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+ </div>
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full  govuk-!-margin-bottom-5"> 
+            <h1 class="govuk-heading-xl  govuk-!-margin-bottom-3">Exploring local authority data</h1>
+            <p class="govuk-!-margin-bottom-0"><strong>Chosen areas:</strong> <span class="key-cube" style="background-color:#F47738;"></span>Aberdeen City, <span class="key-cube" style="background-color:#27A197;"></span>Camden, <span class="key-cube" style="background-color:#FFBF47;"></span>South Tyneside (<a href="where-2-loop.html">Add or remove area</a>)</p>
+      </div>
+  </div>
+
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full chart-panel govuk-!-margin-bottom-7">
+          <div class="govuk-grid-column-full">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0 inline-block">Viewing data as: </h3>
+              <p class="govuk-!-margin-bottom-0 inline-block"><a href="churchill-main.html">Data in context</a> | <a href="churchill-main-selected.html">Chosen areas only</a> | <a href="churchill-main-separate.html">Seperate charts</a> | Table</p>
+          </div>
+    </div>
+   </div>
+
+   <div class="govuk-grid-row  snapshot-section govuk-!-margin-bottom-7">
+
+      <div class="govuk-grid-column-full">
+
+          <h2 class="govuk-heading-m">
+          Number of 18 to 24 year old males entitled to Carers Allowance from May 2007 to May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit.html">Edit</a>)</span>
+          </h2>
+          <!-- <p>Measuring from <select class="govuk-select inline-block"><option selected>May 2007</option><option>August 2007</option><option>November 2007</option></select> to <select class="govuk-select inline-block"><option selected>Feburary 2017</option><option selected>May 2017</option></select></p> -->
+
+          {{ govukTable({
+            firstCellIsHeader: true,
+            head: [
+              {
+                text: "Date"
+              },
+              {
+                text: "Aberdeen City"
+              },
+              {
+                text: "Camden"
+              },
+              {
+                text: "South Tyneside"
+              }
+            ],
+            rows: [
+              [
+                {
+                  text: "May 2007"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2007"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2007"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2008"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2008"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2008"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2008"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2009"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2009"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2009"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2009"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2010"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2010"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2010"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2010"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2011"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2011"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2011"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2011"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2012"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2012"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2012"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2012"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2013"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2013"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2013"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2013"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2014"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2014"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2014"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2014"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2015"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2015"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2015"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2015"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2016"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+                {
+                  text: "May 2016"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "August 2016"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+                {
+                  text: "November 2016"
+                },
+                {
+                  text: "2,277"
+                },
+                {
+                  text: "1,993"
+                },
+                {
+                  text: "2,889"
+                }
+              ],
+              [
+              {
+                text: "February 2017"
+              },
+              {
+                text: "2,277"
+              },
+              {
+                text: "1,993"
+              },
+              {
+                text: "2,889"
+              }
+            ],
+            [
+            {
+              text: "May 2017"
+            },
+            {
+              text: "2,277"
+            },
+            {
+              text: "1,993"
+            },
+            {
+              text: "2,889"
+            }
+          ]
+            ]
+          }) }}
+                          
+          <p class="govuk-body-s">Data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>             
+    </div>
+
+        
+      </div>
+
+      <p><a href="what-loop.html">Add another type of data for comparisson</a></p>
+
+
+{% endblock %}

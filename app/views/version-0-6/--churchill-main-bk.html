@@ -1,13 +1,12 @@
 
-{% extends "layout-wide.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Churchill | Find data about a local area
 {% endblock %}
 
 {% block content %}
-</div>
-<div class="govuk-extra-width-container">
+
 
 <div class="top-alignment-correct">
   <div class="govuk-phase-banner">
@@ -24,26 +23,17 @@
 
 
   <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl  govuk-!-margin-bottom-4">
-            Local authority data
-        </h1>
-        <div class="location-bar govuk-!-margin-bottom-4">
-            <p class="govuk-!-margin-bottom-0">Showing data for: <span class="key-cube" style="background-color:#F47738;"></span>Aberdeen City, <span class="key-cube" style="background-color:#27A197;"></span>Camden, <span class="key-cube" style="background-color:#FFBF47;"></span>South Tyneside (<a href="">Add or remove locations</a>)</p>
-          </div>
+      <div class="govuk-grid-column-full  govuk-!-margin-bottom-6"> 
+            <h1 class="govuk-heading-xl  govuk-!-margin-bottom-3">Exploring local authority data</h1>
+            <p><strong>Showing data for:</strong> <span class="key-cube" style="background-color:#F47738;"></span>Aberdeen City, <span class="key-cube" style="background-color:#27A197;"></span>Camden, <span class="key-cube" style="background-color:#FFBF47;"></span>South Tyneside (<a href="">Add or remove locations</a>)</p>
       </div>
     </div>
 
     <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full">
 
-          <div class="chart-panel govuk-!-margin-bottom-6">
-
-          <h3 class="govuk-heading-m govuk-!-font-weight-regular">
-              Number of 18 to 24 year old males entitled to <strong>Carers Allowance</strong> (<a href="#">edit</a>)
-            </h3>
-            <p>Measuring from <select class="govuk-select"><option>May 2007</option></select> to <select class="govuk-select"><option>May 2017</option></select></p>
+          
 
           <div class="tabs">
               <div class="tabs-nav">
@@ -78,8 +68,18 @@
                       <h2 class="visually-hidden govuk-heading-m">
                           Data in context
                         </h2>
+
+                        <h3 class="govuk-heading-m">
+                            Number of 18 to 24 year old males entitled to <strong>Carers Allowance</strong> <span class="govuk-!-font-weight-regular">(<a href="#">Edit</a>)</span>
+                          </h3>
+                          <p>Measuring from May 2007 to May 2017 (<a href="#">Edit</a>)</p>
+
                           <img src="../../public/images/chart.png" class="full-width-image govuk-!-margin-bottom-3"/>
-                          <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
+                          
+                          <h4 class="govuk-heading-s">Great Britain as a whole</h4>
+                          <img src="../../public/images/chart-uk-wide.png" class="full-width-image govuk-!-margin-bottom-3"/>
+                          
+                          <p class="govuk-body-s">Data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
                     </div>
                 </div>
       
@@ -713,15 +713,9 @@
               </div>
             </div>
 
-            
-          </div>
         
       </div>
 
-    <div class="govuk-grid-column-one-third">
-        
-
-    </div>
 </div>
 
 

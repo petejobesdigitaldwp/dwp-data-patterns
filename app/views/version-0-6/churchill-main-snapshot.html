@@ -1,13 +1,11 @@
 
-{% extends "layout-wide.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Churchill | Find data about a local area
 {% endblock %}
 
 {% block content %}
-</div>
-<div class="govuk-extra-width-container">
 
 <div class="top-alignment-correct">
   <div class="govuk-phase-banner">
@@ -24,80 +22,59 @@
 
 
   <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-font-weight-regular">
-            Number of 18 to 24 year old males entitled to <strong>Carers Allowance</strong> in selected <strong>Local Authorities</strong>
+      <div class="govuk-grid-column-full  govuk-!-margin-bottom-7">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+            Exploring local authority data
         </h1>
+        <p class="govuk-!-margin-bottom-0"><strong>Chosen areas:</strong> <span class="key-cube" style="background-color:#F47738;"></span>Aberdeen City, <span class="key-cube" style="background-color:#27A197;"></span>Camden, <span class="key-cube" style="background-color:#FFBF47;"></span>South Tyneside (<a href="where-2-loop.html">Add or remove area</a>)</p>
       </div>
     </div>
 
-    <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-two-thirds">
-        <ul class="big-stat-list govuk-heading-m">
-          <li>61 <span class="govuk-!-font-weight-regular">in</span> Aberdeen City</li>
-          <li>122 <span class="govuk-!-font-weight-regular">in</span> Camden</li>
-          <li>186 <span class="govuk-!-font-weight-regular">in</span> South Tyneside</li>
-        </ul>
-        <img src="../../public/images/bar-chart.png" class="full-width-image govuk-!-margin-bottom-5"/>
-        <p><a href="#">Add another type of data for comparisson</a></p>
-        <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
+      <div class="govuk-grid-row snapshot-section govuk-!-margin-bottom-7">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m">
+                Number of 18 to 24 year old males entitled to Carers Allowance in May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit.html">Edit</a>)</span>
+            </h2>
+
+          <img src="../../public/images/bar-chart.png" class="full-width-image govuk-!-margin-bottom-5"/>
+          <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
+
+          <!-- <ul class="big-stat-list govuk-heading-m">
+              <li>61 <span class="govuk-!-font-weight-regular">in</span> Aberdeen City</li>
+              <li>122 <span class="govuk-!-font-weight-regular">in</span> Camden</li>
+              <li>186 <span class="govuk-!-font-weight-regular">in</span> South Tyneside</li>
+            </ul> -->
+          
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            <img src="../../public/images/heatmap-carers.png" class="full-width-image govuk-!-margin-bottom-5"/>
+        </div>
+
       </div>
 
-    <div class="govuk-grid-column-one-third">
-        {{ govukTable({
-          classes: "govuk-!-margin-bottom-2",
-          caption: "Where you've chosen",
-          captionClasses: "govuk-heading-m",
-          rows: [
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ]
-          ]
-        }) }}
-        <p class="govuk-!-margin-bottom-7"><a href="where-2-loop.html" class="govuk-!-margin-bottom-6">Add another area</a></p>
 
-        {{ govukTable({
-          classes: "govuk-!-margin-bottom-2",
-          caption: "What you're measuring",
-          captionClasses: "govuk-heading-m",
-          rows: [
-            [
-              {
-                html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong>, May 2007 - May 2017."
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Change</a>"
-              }
-            ]
-          ]
-        }) }}
-        <p class="govuk-!-margin-bottom-7"><a href="what-loop.html">Add another statistic</a></p>
+      <!-- <div class="govuk-grid-row snapshot-section govuk-!-margin-bottom-7">
 
+          <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-m">
+                  Number of 18 to 24 year old males recieving Universal Credit in May 2017 <span class="govuk-!-font-weight-regular">(<a href="#">Edit</a>)</span>
+              </h2>
+            <img src="../../public/images/bar-chart.png" class="full-width-image govuk-!-margin-bottom-5"/>
+            <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
+
+          </div>
   
-    </div>
-</div>
+          <div class="govuk-grid-column-one-third">
+              <img src="../../public/images/heatmap-carers.png" class="full-width-image govuk-!-margin-bottom-5"/>
+          </div>
+  
+        </div> -->
+
+      <p><a href="what-loop.html">Add another type of data for comparisson</a></p>
 
 
 {% endblock %}
