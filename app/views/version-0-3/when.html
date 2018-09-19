@@ -128,10 +128,20 @@
         ]
       }) }}
 
-      {{ govukButton({
-        text: "Continue",
-        href: "churchill-main.html"
-      }) }}
+      <a href="#" class="govuk-button" id="continue-button">
+          Continue
+        </a>
+  
+
+      <script type="text/javascript">
+        document.getElementById("when-choice-1").onclick = function () {
+          document.getElementById("continue-button").href="churchill-main.html"; 
+        }
+
+        document.getElementById("when-choice-2").onclick = function() {
+          document.getElementById("continue-button").href="churchill-main-snapshot.html"; 
+        };
+    </script>
 
     </div>
 
