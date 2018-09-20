@@ -279,7 +279,7 @@
     <div class="govuk-grid-column-one-third">
 
         {{ govukTable({
-          classes: "govuk-!-margin-bottom-2",
+          classes: "govuk-!-margin-bottom-7",
           caption: "What you're measuring",
           captionClasses: "govuk-heading-m",
           rows: [
@@ -306,7 +306,22 @@
               {
                 html: "<a href=\"#\" class=\"right\">Remove</a>"
               }
-            
+            ],
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
+            ],
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
             ]
           ]
         }) }}
