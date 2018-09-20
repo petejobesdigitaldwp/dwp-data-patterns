@@ -21,7 +21,7 @@
 
       {{ govukBackLink({
         text: "Back",
-        href: "churchill-main.html"
+        href: "churchill-main-snapshot.html"
       }) }}
    </div>
 
@@ -195,7 +195,7 @@
               <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
                 
                 <legend class="govuk-fieldset__legend govuk-label--m">
-                  When would you like to measure from?
+                  What date would you like to view data for?
                 </legend>
                           
                 <div class="govuk-date-input" id="snapshot-date">
@@ -242,58 +242,8 @@
               
               
               </div>
-    
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
-                  
-                  <legend class="govuk-fieldset__legend govuk-label--m">
-                    When would you like to measure to?
-                  </legend>
-                            
-                  <div class="govuk-date-input" id="snapshot-date">
-      
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="snapshot-date-year">
-                          Year
-                        </label>
-                      
-                        <select class="govuk-select govuk-date-input__input govuk-input--width-4 " id="snapshot-date-year" name="snapshot-date-year" type="number" pattern="[0-9]*">
-                          <option>2007</option>
-                          <option>2008</option> 
-                          <option>2009</option> 
-                          <option>2010</option> 
-                          <option>2011</option> 
-                          <option>2012</option> 
-                          <option>2013</option> 
-                          <option>2014</option> 
-                          <option>2015</option> 
-                          <option>2016</option> 
-                          <option>2017</option>   
-                        </select>
-                      </div>
-                    </div>
-      
-                    <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="snapshot-date-month">
-                            Month
-                          </label>
-                        
-                          <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
-                            <option>February</option> 
-                            <option selected>May</option>  
-                            <option>August</option>  
-                            <option>November</option>   
-                          </select>
-                        </div>
-                      </div>
-                  
-                  </div>
-                  </fieldset>
-                
-                
-                </div>
+
+
 
 
       {{ govukRadios({
@@ -327,11 +277,11 @@
       
         <script type="text/javascript">
           document.getElementById("add-more-datatypes-1").onclick = function () {
-            document.getElementById("continue-button").href="what-loop.html"; 
+            document.getElementById("continue-button").href="what-loop-snapshot.html"; 
           }
       
           document.getElementById("add-more-datatypes-2").onclick = function() {
-            document.getElementById("continue-button").href="churchill-main.html"; 
+            document.getElementById("continue-button").href="churchill-main-snapshot.html"; 
           };
       </script>
 

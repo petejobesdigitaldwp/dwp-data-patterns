@@ -192,75 +192,163 @@
       </div>
 
       {% set rangeHtml %}
-        {{ govukDateInput({
-          id: "range-from",
-          name: "range-from",
-          fieldset: {
-            legend: {
-              text: "When would you like to measure from?",
-              classes: "govuk-label--s"
-            }
-          },
-          hint: {
-            text: "For example, 3 1980"
-          },
-          items: [
-            {
-              name: "month"
-            },
-            {
-              name: "year"
-            }
-          ]
-        }) }}
-
-        {{ govukDateInput({
-          id: "range-to",
-          name: "range-to",
-          fieldset: {
-            legend: {
-              text: "When would you like to measure to?",
-              classes: "govuk-label--s"
-            }
-          },
-          hint: {
-            text: "For example, 3 1980"
-          },
-          items: [
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
             
-            {
-              name: "month"
-            },
-            {
-              name: "year"
-            }
-          ]
-        }) }}
+            <legend class="govuk-fieldset__legend govuk-label--s">
+              When would you like to measure from?
+            </legend>
+                      
+            <div class="govuk-date-input" id="snapshot-date">
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="snapshot-date-year">
+                    Year
+                  </label>
+                
+                  <select class="govuk-select govuk-date-input__input govuk-input--width-4 " id="snapshot-date-year" name="snapshot-date-year" type="number" pattern="[0-9]*">
+                    <option>2007</option>
+                    <option>2008</option> 
+                    <option>2009</option> 
+                    <option>2010</option> 
+                    <option>2011</option> 
+                    <option>2012</option> 
+                    <option>2013</option> 
+                    <option>2014</option> 
+                    <option>2015</option> 
+                    <option>2016</option> 
+                    <option>2017</option>   
+                  </select>
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="snapshot-date-month">
+                      Month
+                    </label>
+                  
+                    <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
+                      <option>February</option> 
+                      <option selected>May</option>  
+                      <option>August</option>  
+                      <option>November</option>   
+                    </select>
+                  </div>
+                </div>
+            
+            </div>
+            </fieldset>
+          
+          
+          </div>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
+              
+              <legend class="govuk-fieldset__legend govuk-label--s">
+                When would you like to measure to?
+              </legend>
+                        
+              <div class="govuk-date-input" id="snapshot-date">
+  
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="snapshot-date-year">
+                      Year
+                    </label>
+                  
+                    <select class="govuk-select govuk-date-input__input govuk-input--width-4 " id="snapshot-date-year" name="snapshot-date-year" type="number" pattern="[0-9]*">
+                      <option>2007</option>
+                      <option>2008</option> 
+                      <option>2009</option> 
+                      <option>2010</option> 
+                      <option>2011</option> 
+                      <option>2012</option> 
+                      <option>2013</option> 
+                      <option>2014</option> 
+                      <option>2015</option> 
+                      <option>2016</option> 
+                      <option>2017</option>   
+                    </select>
+                  </div>
+                </div>
+  
+                <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="snapshot-date-month">
+                        Month
+                      </label>
+                    
+                      <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
+                        <option>February</option> 
+                        <option selected>May</option>  
+                        <option>August</option>  
+                        <option>November</option>   
+                      </select>
+                    </div>
+                  </div>
+              
+              </div>
+              </fieldset>
+            
+            
+            </div>
       {% endset -%}
 
       {% set snapshotHtml %}
-          {{ govukDateInput({
-            id: "snapshot-date",
-            name: "snapshot-date",
-            fieldset: {
-              legend: {
-                text: "What date would you like to view data for?",
-                classes: "govuk-label--s"
-              }
-            },
-            hint: {
-              text: "For example, 3 1980"
-            },
-            items: [
-              
-              {
-                name: "month"
-              },
-              {
-                name: "year"
-              }
-            ]
-          }) }}
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
+            
+            <legend class="govuk-fieldset__legend govuk-label--s">
+              What date would you like to view data for?
+            </legend>
+                      
+            <div class="govuk-date-input" id="snapshot-date">
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="snapshot-date-year">
+                    Year
+                  </label>
+                
+                  <select class="govuk-select govuk-date-input__input govuk-input--width-4 " id="snapshot-date-year" name="snapshot-date-year" type="number" pattern="[0-9]*">
+                    <option>2007</option>
+                    <option>2008</option> 
+                    <option>2009</option> 
+                    <option>2010</option> 
+                    <option>2011</option> 
+                    <option>2012</option> 
+                    <option>2013</option> 
+                    <option>2014</option> 
+                    <option>2015</option> 
+                    <option>2016</option> 
+                    <option>2017</option>   
+                  </select>
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="snapshot-date-month">
+                      Month
+                    </label>
+                  
+                    <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
+                      <option>February</option> 
+                      <option selected>May</option>  
+                      <option>August</option>  
+                      <option>November</option>   
+                    </select>
+                  </div>
+                </div>
+            
+            </div>
+            </fieldset>
+          
+          
+          </div>
       {% endset -%}
 
 
@@ -321,13 +409,28 @@
         </a>
       
         <script type="text/javascript">
-          document.getElementById("add-more-datatypes-1").onclick = function () {
-            document.getElementById("continue-button").href="what-loop.html"; 
-          }
-      
-          document.getElementById("add-more-datatypes-2").onclick = function() {
-            document.getElementById("continue-button").href="churchill-main.html"; 
-          };
+
+              var x = "0";
+
+              document.getElementById("when-choice-1").onclick = function () {
+                document.getElementById("continue-button").href="churchill-main.html";
+                x = "1";
+              }
+
+              document.getElementById("when-choice-2").onclick = function() {
+                document.getElementById("continue-button").href="churchill-main-snapshot.html";
+                x = "2";
+              };
+
+              document.getElementById("add-more-datatypes-1").onclick = function () {
+                if ( x == "1") { document.getElementById("continue-button").href="what-loop.html"; }
+                else { document.getElementById("continue-button").href="what-loop-snapshot.html"; }
+              }
+
+              document.getElementById("add-more-datatypes-2").onclick = function () {
+              }
+
+
       </script>
 
     </div>
