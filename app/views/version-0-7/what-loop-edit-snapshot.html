@@ -21,7 +21,7 @@
 
       {{ govukBackLink({
         text: "Back",
-        href: "where-2.html"
+        href: "churchill-main-snapshot.html"
       }) }}
    </div>
 
@@ -45,8 +45,7 @@
             items: [
               {
                 value: "-",
-                text: "Please select",
-                selected: true
+                text: "Please select"
               },
               {
                 value: "active-enterprises",
@@ -58,7 +57,8 @@
               },
               {
                 value: "carers-allowance",
-                text: "Carers Allowance"
+                text: "Carers Allowance",
+                selected: true
               },
               {
                 value: "claimant-count",
@@ -67,7 +67,7 @@
             ]
           }) }}
     
-          <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
+          <div class="govuk-radios__conditional" id="conditional-display" style="display: block;">
               {{ govukRadios({
                 idPrefix: "metric",
                 name: "metric",
@@ -84,7 +84,8 @@
                   },
                   {
                     value: "number-entitled",
-                    text: "Number of people entitled to Carers Allownace"
+                    text: "Number of people entitled to Carers Allownace",
+                    checked: true
                   },
                   {
                     value: "number-in-reciept",
@@ -103,8 +104,7 @@
                 items: [
                   {
                     value: "-",
-                    text: "All age groups",
-                    selected: true
+                    text: "All age groups"
                   },
                   {
                     value: "under-18",
@@ -112,7 +112,8 @@
                   },
                   {
                     value: "18-to-24",
-                    text: "18 to 24"
+                    text: "18 to 24",
+                    selected: true
                   },
                   {
                     value: "25-to-29",
@@ -172,7 +173,8 @@
                 items: [
                   {
                     value: "male",
-                    text: "Male"
+                    text: "Male",
+                    checked: true
                   },
                   {
                     value: "female",
@@ -193,7 +195,7 @@
               <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
                 
                 <legend class="govuk-fieldset__legend govuk-label--m">
-                  When would you like to measure from?
+                  What date would you like to view data for?
                 </legend>
                           
                 <div class="govuk-date-input" id="snapshot-date">
@@ -240,58 +242,8 @@
               
               
               </div>
-    
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
-                  
-                  <legend class="govuk-fieldset__legend govuk-label--m">
-                    When would you like to measure to?
-                  </legend>
-                            
-                  <div class="govuk-date-input" id="snapshot-date">
-      
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="snapshot-date-year">
-                          Year
-                        </label>
-                      
-                        <select class="govuk-select govuk-date-input__input govuk-input--width-4 " id="snapshot-date-year" name="snapshot-date-year" type="number" pattern="[0-9]*">
-                          <option>2007</option>
-                          <option>2008</option> 
-                          <option>2009</option> 
-                          <option>2010</option> 
-                          <option>2011</option> 
-                          <option>2012</option> 
-                          <option>2013</option> 
-                          <option>2014</option> 
-                          <option>2015</option> 
-                          <option>2016</option> 
-                          <option>2017</option>   
-                        </select>
-                      </div>
-                    </div>
-      
-                    <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="snapshot-date-month">
-                            Month
-                          </label>
-                        
-                          <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
-                            <option>February</option> 
-                            <option selected>May</option>  
-                            <option>August</option>  
-                            <option>November</option>   
-                          </select>
-                        </div>
-                      </div>
-                  
-                  </div>
-                  </fieldset>
-                
-                
-                </div>
+
+
 
 
       {{ govukRadios({
@@ -325,33 +277,17 @@
       
         <script type="text/javascript">
           document.getElementById("add-more-datatypes-1").onclick = function () {
-            document.getElementById("continue-button").href="what-loop.html"; 
+            document.getElementById("continue-button").href="what-loop-snapshot.html"; 
           }
       
           document.getElementById("add-more-datatypes-2").onclick = function() {
-            document.getElementById("continue-button").href="churchill-main.html"; 
+            document.getElementById("continue-button").href="churchill-main-snapshot.html"; 
           };
       </script>
 
 
     </div>
     <div class="govuk-grid-column-one-third">
-
-        {{ govukTable({
-          classes: "govuk-!-margin-bottom-7",
-          caption: "What you're measuring",
-          captionClasses: "govuk-heading-m",
-          rows: [
-            [
-              {
-                html: "Number of people entitled to <strong>Carers allowance</strong> from May 2007 to May 2017"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Change</a>"
-              }
-            ]
-          ]
-        }) }}
 
         {{ govukTable({
           classes: "govuk-!-margin-bottom-2",
@@ -361,6 +297,22 @@
             [
               {
                 html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
+            ],
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Remove</a>"
+              }
+            ],
+            [
+              {
+                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
               },
               {
                 html: "<a href=\"#\" class=\"right\">Remove</a>"
