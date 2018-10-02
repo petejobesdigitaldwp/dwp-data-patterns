@@ -68,127 +68,125 @@
           }) }}
     
           <div class="govuk-radios__conditional" id="conditional-display" style="display: block;">
-              {{ govukRadios({
-                idPrefix: "metric",
-                name: "metric",
-                fieldset: {
-                  legend: {
-                    text: "How would you like to view this data?",
-                    classes: "govuk-label--s"
-                  }
-                },
-                items: [
-                  {
-                    value: "average-amount",
-                    text: "Average weekly amount of Carers Allowance"
-                  },
-                  {
-                    value: "number-entitled",
-                    text: "Number of people entitled to Carers Allownace",
-                    checked: true
-                  },
-                  {
-                    value: "number-in-reciept",
-                    text: "Number of people in reciept of Carers Allownace"
-                  }
-                ]
-              }) }}
-    
-              {{ govukSelect({
-                id: "data-list",
-                name: "data-list",
-                label: {
-                  text: "What age group would you like to see data for?",
+            {{ govukSelect({
+              id: "metric",
+              name: "metric",
+              label: {
+                  text: "How would you like to view this data?",
                   classes: "govuk-label--s"
+              },
+              items: [
+                {
+                  value: "average-amount",
+                  text: "Average weekly amount of Carers Allowance"
                 },
-                items: [
-                  {
-                    value: "-",
-                    text: "All age groups"
-                  },
-                  {
-                    value: "under-18",
-                    text: "Under 18"
-                  },
-                  {
-                    value: "18-to-24",
-                    text: "18 to 24",
-                    selected: true
-                  },
-                  {
-                    value: "25-to-29",
-                    text: "25 to 29"
-                  },
-                  {
-                    value: "30-to-34",
-                    text: "30 to 34"
-                  },
-                  {
-                    value: "35-to-39",
-                    text: "35 to 39"
-                  },
-                  {
-                    value: "40-to-44",
-                    text: "40 to 44"
-                  },
-                  {
-                    value: "45-to-49",
-                    text: "45 to 49"
-                  },
-                  {
-                    value: "50-to-54",
-                    text: "50 to 54"
-                  },
-                  {
-                    value: "55-to-59",
-                    text: "55 to 59"
-                  },
-                  {
-                    value: "60-to-64",
-                    text: "60 to 64"
-                  },
-                  {
-                    value: "over-64",
-                    text: "Over 64"
-                  },
-                  {
-                    value: "unknown",
-                    text: "Unknown"
-                  }
-                ]
-              }) }}
-    
-              {{ govukRadios({
-                idPrefix: "gender",
-                name: "gender",
-                fieldset: {
-                  legend: {
-                    text: "What sex would you like to see data for?",
-                    classes: "govuk-label--s"
-                  }
+                {
+                  value: "number-entitled",
+                  text: "Number of people entitled to Carers Allownace",
+                  selected: true
                 },
-                hint: {
-                  text: "The data set is historically divided by binary sex rather than gender"
+                {
+                  value: "number-in-reciept",
+                  text: "Number of people in reciept of Carers Allownace"
+                }
+              ]
+            }) }}
+  
+            {{ govukSelect({
+              id: "data-list",
+              name: "data-list",
+              label: {
+                text: "What age group would you like to see data for?",
+                classes: "govuk-label--s"
+              },
+              items: [
+                {
+                  value: "-",
+                  text: "All age groups"
                 },
-                items: [
-                  {
-                    value: "male",
-                    text: "Male",
-                    checked: true
-                  },
-                  {
-                    value: "female",
-                    text: "Female"
-                  },
-                  {
-                    divider: "or"
-                  },
-                  {
-                    value: "all",
-                    text: "All"
+                {
+                  value: "under-18",
+                  text: "Under 18"
+                },
+                {
+                  value: "18-to-24",
+                  text: "18 to 24",
+                  selected: true
+                },
+                {
+                  value: "25-to-29",
+                  text: "25 to 29"
+                },
+                {
+                  value: "30-to-34",
+                  text: "30 to 34"
+                },
+                {
+                  value: "35-to-39",
+                  text: "35 to 39"
+                },
+                {
+                  value: "40-to-44",
+                  text: "40 to 44"
+                },
+                {
+                  value: "45-to-49",
+                  text: "45 to 49"
+                },
+                {
+                  value: "50-to-54",
+                  text: "50 to 54"
+                },
+                {
+                  value: "55-to-59",
+                  text: "55 to 59"
+                },
+                {
+                  value: "60-to-64",
+                  text: "60 to 64"
+                },
+                {
+                  value: "over-64",
+                  text: "Over 64"
+                },
+                {
+                  value: "unknown",
+                  text: "Unknown"
+                }
+              ]
+            }) }}
+  
+            {{ govukCheckboxes({
+              idPrefix: "gender",
+              name: "gender",
+              fieldset: {
+                legend: {
+                  text: "What sex would you like to see data for?",
+                  classes: "govuk-label--s"
+                }
+              },
+              hint: {
+                text: "The data set is historically divided by binary sex rather than gender. Select all that you want to show."
+              },
+              items: [
+                {
+                  value: "male",
+                  text: "Male",
+                  checked: true
+                },
+                {
+                  value: "female",
+                  text: "Female"
+                },
+                {
+                  value: "all",
+                  text: "All",
+                  hint: {
+                    text: "This will show a combined value"
                   }
-                ]
-              }) }}
+                }
+              ]
+            }) }}
           </div>
 
           <div class="govuk-form-group">

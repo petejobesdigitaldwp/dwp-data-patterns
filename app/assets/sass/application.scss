@@ -332,4 +332,12 @@ $govuk-global-styles: true;
 
 /*** CHART CONTROL PANEL  ***/
 
-.chart-panel { background-color: #f8f8f8; padding:15px 0px; }
+.chart-panel { background-color: #f8f8f8; padding:15px 0px; /** border-bottom: 2px solid #005ea5;  **/ }
+.chart-panel-new { background-color: #f8f8f8; padding:15px 0px; border-bottom: 3px solid #005ea5; }
+
+/*** SNAPSHOT PAGE ***/
+
+
+.snapshot-alt .snapshot-chart-block { padding:0; border:0px; border-bottom:1px solid #bfc1c3; }
+.snapshot-alt .snapshot-chart-block:hover {background-color:#FFF; }
+.snapshot-alt .snapshot-chart-block-active { border:0px; border-bottom:1px solid #bfc1c3; }

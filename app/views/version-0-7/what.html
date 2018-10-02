@@ -70,14 +70,12 @@
       }) }}
 
       <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
-          {{ govukRadios({
-            idPrefix: "metric",
+        {{ govukSelect({
+            id: "metric",
             name: "metric",
-            fieldset: {
-              legend: {
+            label: {
                 text: "How would you like to view this data?",
                 classes: "govuk-label--s"
-              }
             },
             items: [
               {
@@ -159,7 +157,7 @@
             ]
           }) }}
 
-          {{ govukRadios({
+          {{ govukCheckboxes({
             idPrefix: "gender",
             name: "gender",
             fieldset: {
@@ -169,7 +167,7 @@
               }
             },
             hint: {
-              text: "The data set is historically divided by binary sex rather than gender"
+              text: "The data set is historically divided by binary sex rather than gender. Select all that you want to show."
             },
             items: [
               {
@@ -181,11 +179,11 @@
                 text: "Female"
               },
               {
-                divider: "or"
-              },
-              {
                 value: "all",
-                text: "All"
+                text: "All",
+                hint: {
+                  text: "This will show a combined value"
+                }
               }
             ]
           }) }}
