@@ -27,8 +27,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Find data about a local area</span>     
+ 
       <h1 class="govuk-heading-xl">Where to measure data for</h1>    
 
     </div>
@@ -70,44 +69,11 @@
       }) }}
       <p class="link-beneath-select"><a href="where-map-loop.html">You can also choose areas from a map</a></p>
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "add-more-areas",
-        name: "add-more-areas",
-        fieldset: {
-          legend: {
-            text: "Would you like to compare this to another area?",
-            classes: "govuk-label--m"
-          }
-        },
-        hint: {
-          text: "You can select up to ten areas to compare."
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
 
-      <a href="#" class="govuk-button" id="continue-button">
+      <a href="churchill-main-snapshot.html" class="govuk-button" id="continue-button">
           Continue
         </a>
       
-        <script type="text/javascript">
-          document.getElementById("add-more-areas-1").onclick = function () {
-            document.getElementById("continue-button").href="#"; 
-          }
-      
-          document.getElementById("add-more-areas-2").onclick = function() {
-            document.getElementById("continue-button").href="churchill-main-snapshot.html"; 
-          };
-      </script>
 
     </div>
     <div class="govuk-grid-column-one-third">

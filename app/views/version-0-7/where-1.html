@@ -28,7 +28,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-xl">Find data about a local area</span>  
+
       {{ govukRadios({
         idPrefix: "what-area-type",
         name: "what-area-type",
@@ -63,10 +63,10 @@
         ]
       }) }}
 
-      {{ govukButton({
-        text: "Continue",
-        href: "where-2.html"
-      }) }}
+      
+      <a href="where-2.html" class="govuk-button" id="continue-button">
+          Continue
+        </a>
 
     </div>
 </div>

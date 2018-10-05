@@ -27,12 +27,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Find data about a local area</span>   
+ 
       <h1 class="govuk-heading-xl">What data to measure</h1>  
 
       </div>
       <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" class="form">
 
           {{ govukSelect({
             id: "measure-select",
@@ -317,19 +318,9 @@
         ]
       }) }}
 
-      <a href="#" class="govuk-button" id="continue-button">
-          Continue
-        </a>
-      
-        <script type="text/javascript">
-          document.getElementById("add-more-datatypes-1").onclick = function () {
-            document.getElementById("continue-button").href="what-loop.html"; 
-          }
-      
-          document.getElementById("add-more-datatypes-2").onclick = function() {
-            document.getElementById("continue-button").href="churchill-main.html"; 
-          };
-      </script>
+      <button class="govuk-button">Continue</button>
+
+      </form>
 
 
     </div>

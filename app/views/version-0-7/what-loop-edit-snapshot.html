@@ -27,8 +27,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Find data about a local area</span>   
+ 
       <h1 class="govuk-heading-xl">What data to measure</h1>  
 
       </div>
@@ -243,45 +242,10 @@
 
 
 
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "add-more-datatypes",
-        name: "add-more-datatypes",
-        fieldset: {
-          legend: {
-            text: "Would you like to compare this to another type of data?",
-            classes: "govuk-label--m"
-          }
-        },
-        hint: {
-          text: "This will help you to look at possible cause and effect relationships."
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-      <a href="#" class="govuk-button" id="continue-button">
+      <a href="churchill-main-snapshot.html" class="govuk-button" id="continue-button">
           Continue
         </a>
       
-        <script type="text/javascript">
-          document.getElementById("add-more-datatypes-1").onclick = function () {
-            document.getElementById("continue-button").href="what-loop-snapshot.html"; 
-          }
-      
-          document.getElementById("add-more-datatypes-2").onclick = function() {
-            document.getElementById("continue-button").href="churchill-main-snapshot.html"; 
-          };
-      </script>
 
 
     </div>

@@ -27,47 +27,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Find data about a local area</span>     
+ 
       <h1 class="govuk-heading-xl">Where to measure data for</h1>    
 
     </div>
     <div class="govuk-grid-column-two-thirds">
       
-      {{ govukSelect({
-        id: "where",
-        name: "where",
-        label: {
-          text: "What local authority would you like to measure data for?",
-          classes: "govuk-label--m"
-        },
-        items: [
-          {
-            value: "aberdeen-city",
-            text: "Aberdeen City"
-          },
-          {
-            value: "aberdeenshire",
-            text: "Aberdeenshire"
-          },
-          {
-            value: "adur",
-            text: "Adur"
-          },
-          {
-            value: "allerdale",
-            text: "Allerdale"
-          },
-          {
-            value: "amber-valley",
-            text: "Amber Valley"
-          },
-          {
-            value: "angus",
-            text: "Angus"
-          }
-        ]
-      }) }}
+      <form method="post" class="form">
+      {% include "version-0-7/local-authority-select.html" %}
       <p class="link-beneath-select"><a href="where-map-loop.html">You can also choose areas from a map</a></p>
 
       {{ govukRadios({
@@ -95,38 +62,25 @@
         ]
       }) }}
 
-      <a href="#" class="govuk-button" id="continue-button">
-          Continue
-        </a>
-      
-        <script type="text/javascript">
-          document.getElementById("add-more-areas-1").onclick = function () {
-            document.getElementById("continue-button").href="where-2-loop.html"; 
-          }
-      
-          document.getElementById("add-more-areas-2").onclick = function() {
-            document.getElementById("continue-button").href="what.html"; 
-          };
-      </script>
+      <button class="govuk-button">Continue</button>
+
+      </form>
+
 
     </div>
     <div class="govuk-grid-column-one-third">
-        {{ govukTable({
-          classes: "govuk-!-margin-bottom-2",
-          caption: "Where you've chosen",
-          captionClasses: "govuk-heading-m",
-          rows: [
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            
-            ]
-          ]
-        }) }}
+        
+        <table class="govuk-table govuk-!-margin-bottom-2">
+            <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><div class="key-cube" style="background-color:#F47738;"></div>{{ data['where'] }}</td>
+                <td class="govuk-table__cell "><a href="#" class="right">Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
+      
+      
         
     </div>
 </div>

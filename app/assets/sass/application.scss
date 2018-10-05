@@ -334,6 +334,8 @@ $govuk-global-styles: true;
 
 .chart-panel { background-color: #f8f8f8; padding:15px 0px; /** border-bottom: 2px solid #005ea5;  **/ }
 .chart-panel-new { background-color: #f8f8f8; padding:15px 0px; border-bottom: 3px solid #005ea5; }
+.chart-panel-blue { background-color: #005ea5; color:#FFF; padding:15px 0px;  }
+.chart-panel-blue a, .chart-panel-blue p, .chart-panel-blue h3 { color: #FFF; }
 
 /*** SNAPSHOT PAGE ***/
 
@@ -341,3 +343,35 @@ $govuk-global-styles: true;
 .snapshot-alt .snapshot-chart-block { padding:0; border:0px; border-bottom:1px solid #bfc1c3; }
 .snapshot-alt .snapshot-chart-block:hover {background-color:#FFF; }
 .snapshot-alt .snapshot-chart-block-active { border:0px; border-bottom:1px solid #bfc1c3; }
+
+/*** AUTOCOMPLETE ***/
+
+.ui-autocomplete {
+  background-color: #fff;
+  border: 2px solid #0b0c0c;
+  border-top: 0;
+  color: #34384b;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 4px);
+  width: 200px;
+  max-height: 300px;
+  overflow-x: hidden;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+}
+.ui-autocomplete .ui-menu-item {
+  border-top: 1px solid #bfc1c3;
+  display: block;
+  padding: 4px 6px;
+  color: #34384b;
+  cursor: pointer;
+}
+.ui-autocomplete .ui-menu-item:first-child {
+  border-top: none;
+}
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+  background-color: #005ea5;
+  color: #FFF;
+}
+

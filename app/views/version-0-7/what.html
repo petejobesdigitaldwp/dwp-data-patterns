@@ -28,7 +28,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Find data about a local area</span>   
       <h1 class="govuk-heading-xl">What data to measure</h1> 
     </div>
     </div>
@@ -36,6 +35,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+          <form method="post" class="form">
       {{ govukSelect({
         id: "measure-select",
         classes: "measure-select",
@@ -402,34 +402,9 @@
         ]
       }) }}
 
-      <a href="#" class="govuk-button" id="continue-button">
-          Continue
-        </a>
-      
-        <script type="text/javascript">
+      <button class="govuk-button">Continue</button>
 
-              var x = "0";
-
-              document.getElementById("when-choice-1").onclick = function () {
-                document.getElementById("continue-button").href="churchill-main.html";
-                x = "1";
-              }
-
-              document.getElementById("when-choice-2").onclick = function() {
-                document.getElementById("continue-button").href="churchill-main-snapshot.html";
-                x = "2";
-              };
-
-              document.getElementById("add-more-datatypes-1").onclick = function () {
-                if ( x == "1") { document.getElementById("continue-button").href="what-loop.html"; }
-                else { document.getElementById("continue-button").href="what-loop-snapshot.html"; }
-              }
-
-              document.getElementById("add-more-datatypes-2").onclick = function () {
-              }
-
-
-      </script>
+      </form>
 
     </div>
     <div class="govuk-grid-column-one-third">
