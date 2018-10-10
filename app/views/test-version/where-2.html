@@ -7,6 +7,7 @@
 
 {% block content %}
 
+
 <div class="top-alignment-correct">
     <div class="govuk-phase-banner">
         <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
@@ -27,16 +28,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
- 
+
       <h1 class="govuk-heading-xl">Where to measure data for</h1>    
 
-    </div>
-    <div class="govuk-grid-column-two-thirds">
+      <form action="/test-version/where-2-loop" method="post" class="form">
+   
+      {% include "version-0-7/local-authority-select.html" %}
       
-      <form method="post" class="form">
-
-      {% include "version-0-7/local-authority-select-2.html" %}
-      <p class="link-beneath-select"><a href="where-map-loop.html">You can also choose areas from a map</a></p>
+      <p class="link-beneath-select"><a href="where-map.html">You can also choose areas from a map</a></p>
 
       {{ govukRadios({
         classes: "govuk-radios--inline",
@@ -66,33 +65,10 @@
       <button class="govuk-button">Continue</button>
 
       </form>
-
-
-    </div>
-    <div class="govuk-grid-column-one-third">
-        
-        <table class="govuk-table govuk-!-margin-bottom-2">
-            <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
-            <tbody class="govuk-table__body">
-
-              <script type="text/javascript">
-                var where2 = req.session.data['where-2']
-                if (where2 == null) { }
-                else { 
-                   
-                 }
-              </script>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><div class="key-cube" style="background-color:#F47738;"></div>{{ data['where'] }}</td>
-                <td class="govuk-table__cell "><a href="#" class="right">Remove</a></td>
-              </tr>
-            </tbody>
-          </table>
       
-      
-        
+       
     </div>
 </div>
+
 
 {% endblock %}

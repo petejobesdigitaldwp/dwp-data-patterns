@@ -33,40 +33,7 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
       
-      {{ govukSelect({
-        id: "where",
-        name: "where",
-        label: {
-          text: "What local authority would you like to measure data for?",
-          classes: "govuk-label--m"
-        },
-        items: [
-          {
-            value: "aberdeen-city",
-            text: "Aberdeen City"
-          },
-          {
-            value: "aberdeenshire",
-            text: "Aberdeenshire"
-          },
-          {
-            value: "adur",
-            text: "Adur"
-          },
-          {
-            value: "allerdale",
-            text: "Allerdale"
-          },
-          {
-            value: "amber-valley",
-            text: "Amber Valley"
-          },
-          {
-            value: "angus",
-            text: "Angus"
-          }
-        ]
-      }) }}
+        {% include "version-0-7/local-authority-select.html" %}
       <p class="link-beneath-select"><a href="where-map-loop.html">You can also choose areas from a map</a></p>
 
 
