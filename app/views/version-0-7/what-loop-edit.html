@@ -75,7 +75,11 @@
                   classes: "govuk-label--s"
               },
               items: [
-                {
+              {
+                value: "-",
+                text: "Please select"
+              },
+              {
                   value: "average-amount",
                   text: "Average weekly amount of Carers Allowance"
                 },
@@ -109,8 +113,7 @@
                 },
                 {
                   value: "18-to-24",
-                  text: "18 to 24",
-                  selected: true
+                  text: "18 to 24"
                 },
                 {
                   value: "25-to-29",
@@ -170,8 +173,7 @@
               items: [
                 {
                   value: "male",
-                  text: "Male",
-                  checked: true
+                  text: "Male"
                 },
                 {
                   value: "female",
@@ -302,37 +304,15 @@
     </div>
     <div class="govuk-grid-column-one-third">
 
-        {{ govukTable({
-          classes: "govuk-!-margin-bottom-2",
-          caption: "Where you've chosen",
-          captionClasses: "govuk-heading-m",
-          rows: [
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#F47738;\"></div>Aberdeen City"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#27A197;\"></div>Camden"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ],
-            [
-              {
-                html: "<div class=\"key-cube\" style=\"background-color:#FFBF47;\"></div>South Tyneside"
-              },
-              {
-                html: "<a href=\"#\" class=\"right\">Remove</a>"
-              }
-            ]
-          ]
-        }) }}
+        <table class="govuk-table govuk-!-margin-bottom-2">
+            <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><div class="key-cube" style="background-color:#F47738;"></div>{{ data['where'] }}</td>
+                <td class="govuk-table__cell "><a href="#" class="right">Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
         <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
     </div>
 </div>

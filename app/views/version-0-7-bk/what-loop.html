@@ -21,7 +21,7 @@
 
       {{ govukBackLink({
         text: "Back",
-        href: "churchill-main-snapshot.html"
+        href: "where-2.html"
       }) }}
    </div>
 
@@ -32,6 +32,8 @@
 
       </div>
       <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" class="form">
 
           {{ govukSelect({
             id: "measure-select",
@@ -44,7 +46,8 @@
             items: [
               {
                 value: "-",
-                text: "Please select"
+                text: "Please select",
+                selected: true
               },
               {
                 value: "active-enterprises",
@@ -56,8 +59,7 @@
               },
               {
                 value: "carers-allowance",
-                text: "Carers Allowance",
-                selected: true
+                text: "Carers Allowance"
               },
               {
                 value: "claimant-count",
@@ -66,7 +68,7 @@
             ]
           }) }}
     
-          <div class="govuk-radios__conditional" id="conditional-display" style="display: block;">
+          <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
             {{ govukSelect({
               id: "metric",
               name: "metric",
@@ -75,18 +77,13 @@
                   classes: "govuk-label--s"
               },
               items: [
-              {
-                value: "-",
-                text: "Please select"
-              },
-              {
+                {
                   value: "average-amount",
                   text: "Average weekly amount of Carers Allowance"
                 },
                 {
                   value: "number-entitled",
-                  text: "Number of people entitled to Carers Allownace",
-                  selected: true
+                  text: "Number of people entitled to Carers Allownace"
                 },
                 {
                   value: "number-in-reciept",
@@ -105,7 +102,8 @@
               items: [
                 {
                   value: "-",
-                  text: "All age groups"
+                  text: "All age groups",
+                  selected: true
                 },
                 {
                   value: "under-18",
@@ -194,7 +192,7 @@
               <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
                 
                 <legend class="govuk-fieldset__legend govuk-label--m">
-                  What date would you like to view data for?
+                  When would you like to measure from?
                 </legend>
                           
                 <div class="govuk-date-input" id="snapshot-date">
@@ -241,17 +239,108 @@
               
               
               </div>
-
-
-
-      <a href="churchill-main-snapshot.html" class="govuk-button" id="continue-button">
-          Continue
-        </a>
+    
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
+                  
+                  <legend class="govuk-fieldset__legend govuk-label--m">
+                    When would you like to measure to?
+                  </legend>
+                            
+                  <div class="govuk-date-input" id="snapshot-date">
       
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="snapshot-date-year">
+                          Year
+                        </label>
+                      
+                        <select class="govuk-select govuk-date-input__input govuk-input--width-4 " id="snapshot-date-year" name="snapshot-date-year" type="number" pattern="[0-9]*">
+                          <option>2007</option>
+                          <option>2008</option> 
+                          <option>2009</option> 
+                          <option>2010</option> 
+                          <option>2011</option> 
+                          <option>2012</option> 
+                          <option>2013</option> 
+                          <option>2014</option> 
+                          <option>2015</option> 
+                          <option>2016</option> 
+                          <option>2017</option>   
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="snapshot-date-month">
+                            Month
+                          </label>
+                        
+                          <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
+                            <option>February</option> 
+                            <option selected>May</option>  
+                            <option>August</option>  
+                            <option>November</option>   
+                          </select>
+                        </div>
+                      </div>
+                  
+                  </div>
+                  </fieldset>
+                
+                
+                </div>
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "add-more-datatypes",
+        name: "add-more-datatypes",
+        fieldset: {
+          legend: {
+            text: "Would you like to compare this to another type of data?",
+            classes: "govuk-label--m"
+          }
+        },
+        hint: {
+          text: "This will help you to look at possible cause and effect relationships."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <button class="govuk-button">Continue</button>
+
+      </form>
 
 
     </div>
     <div class="govuk-grid-column-one-third">
+
+        {{ govukTable({
+          classes: "govuk-!-margin-bottom-7",
+          caption: "What you're measuring",
+          captionClasses: "govuk-heading-m",
+          rows: [
+            [
+              {
+                html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong> from May 2007 to May 2017"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Change</a>"
+              }
+            ]
+          ]
+        }) }}
 
         <table class="govuk-table govuk-!-margin-bottom-2">
             <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
@@ -262,6 +351,7 @@
               </tr>
             </tbody>
           </table>
+        <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
         <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
     </div>
 </div>

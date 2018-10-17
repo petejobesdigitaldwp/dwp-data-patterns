@@ -25,7 +25,7 @@
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-full  govuk-!-margin-bottom-5"> 
             <h1 class="govuk-heading-xl  govuk-!-margin-bottom-3">Exploring local authority data</h1>
-            <p class="govuk-!-margin-bottom-0"><strong>Chosen areas:</strong> <span class="key-cube" style="background-color:#F47738;"></span>Aberdeen City, <span class="key-cube" style="background-color:#27A197;"></span>Camden, <span class="key-cube" style="background-color:#FFBF47;"></span>South Tyneside (<a href="where-edit.html">Add or remove area</a>)</p>
+            <p class="govuk-!-margin-bottom-0"><strong>Chosen area:</strong> <span class="key-cube" style="background-color:#F47738;"></span>{{ data['where'] }} (<a href="where-edit.html">Add or remove area</a>)</p>
       </div>
   </div>
 
@@ -33,12 +33,12 @@
 
       <div class="govuk-grid-column-full chart-panel-new govuk-!-margin-bottom-7">
           <div class="govuk-grid-column-one-third">
-              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Measuring data for: </h3>
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">When the data is for: </h3>
               <p class="govuk-!-margin-bottom-0">A time period | <a href="churchill-main-snapshot.html">A specific date</a></p>
           </div>
           <div class="govuk-grid-column-two-thirds">
-              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Viewing data as: </h3>
-              <p class="govuk-!-margin-bottom-0">Data in context | <a href="churchill-main-selected.html">Chosen areas only</a> | <a href="churchill-main-separate.html">Separate charts</a> | <a href="churchill-main-table.html">Table</a></p>
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">How the data is shown: </h3>
+              <p class="govuk-!-margin-bottom-0">In national context | <a href="churchill-main-selected.html">Just the area I've chosen</a> | <a href="churchill-main-table.html">Table</a></p>
           </div>
     </div>
    </div>
@@ -48,11 +48,11 @@
       <div class="govuk-grid-column-full">
 
           <h2 class="govuk-heading-m">
-          Number of 18 to 24 year old males entitled to Carers Allowance from May 2007 to May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit.html">Change</a>)</span>
+                People entitled to Carers Allowance from May 2007 to May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit.html">Change</a>)</span>
           </h2>
           <!-- <p>Measuring from <select class="govuk-select inline-block"><option selected>May 2007</option><option>August 2007</option><option>November 2007</option></select> to <select class="govuk-select inline-block"><option selected>Feburary 2017</option><option selected>May 2017</option></select></p> -->
 
-          <img src="../../public/images/chart.png" class="full-width-image govuk-!-margin-bottom-3"/>
+          <img src="../../public/images/single-area-in-context.png" class="full-width-image govuk-!-margin-bottom-3"/>
                           
           <h4 class="govuk-heading-s">Great Britain as a whole</h4>
           <img src="../../public/images/chart-uk-wide.png" class="full-width-image govuk-!-margin-bottom-3"/>

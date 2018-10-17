@@ -1,11 +1,13 @@
 
-{% extends "layout.html" %}
+{% extends "layout-wide.html" %}
 
 {% block pageTitle %}
   Churchill | Find data about a local area
 {% endblock %}
 
 {% block content %}
+</div>
+<div class="govuk-extra-width-container">
 
 <div class="top-alignment-correct">
   <div class="govuk-phase-banner">
@@ -26,7 +28,7 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
             Exploring local authority data
         </h1>
-        <p class="govuk-!-margin-bottom-0"><strong>Chosen area:</strong> {{ data['where'] }} (<a href="where-edit.html">Add or remove area</a>)</p>
+        <p class="govuk-!-margin-bottom-0"><strong>Chosen areas:</strong> <span class="key-cube" style="background-color:#F47738;"></span>Aberdeen City, <span class="key-cube" style="background-color:#27A197;"></span>Camden, <span class="key-cube" style="background-color:#FFBF47;"></span>South Tyneside (<a href="where-2-loop.html">Add or remove area</a>)</p>
       </div>
     </div>
 
@@ -45,18 +47,33 @@
      </div>
 
 
-      <div class="govuk-grid-row snapshot-section govuk-!-margin-bottom-7">
+      <div class="govuk-grid-row">
 
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-two-thirds snapshot-alt">
 
-            <div class="snapshot-chart-block">
+            <div class="snapshot-chart-block govuk-!-margin-bottom-7">
                 <h2 class="govuk-heading-m">
-                        People entitled to Carers Allowance in May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit-snapshot.html">Change</a>)</span>
+                    Number of 18 to 24 year old males entitled to Carers Allowance in May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit-snapshot.html">Change</a>)</span>
                 </h2>
                 <img src="../../public/images/bar-chart.png" class="full-width-image govuk-!-margin-bottom-7"/>
                 <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
             </div>
 
+            <div class="snapshot-chart-block govuk-!-margin-bottom-7 snapshot-chart-block-active">
+                <h2 class="govuk-heading-m">
+                Number of 18 to 24 year old males claiming Universal Credit in July 2018 <span class="govuk-!-font-weight-regular">(<a href="#">Edit</a>)</span>
+                </h2>
+                <img src="../../public/images/bar-chart-uc.png" class="full-width-image govuk-!-margin-bottom-5"/>
+                <p class="govuk-body-s">View data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>
+            </div>
+
+            <div class="snapshot-chart-block govuk-!-margin-bottom-7">
+                <h2 class="govuk-heading-m">
+                Number of 18 to 24 year old males claiming Employment Support Allowance in Feb 2018 <span class="govuk-!-font-weight-regular">(<a href="#">Edit</a>)</span>
+                </h2>
+                <img src="../../public/images/bar-chart-esa.png" class="full-width-image govuk-!-margin-bottom-5"/>
+                <p class="govuk-body-s">View data source: <a href="https://www.nomisweb.co.uk/">NomisWeb</a></p>
+            </div>
          
             <!-- <ul class="big-stat-list govuk-heading-m">
               <li>61 <span class="govuk-!-font-weight-regular">in</span> Aberdeen City</li>
@@ -67,6 +84,7 @@
         </div>
 
         <div class="govuk-grid-column-one-third">
+                <h2 class="govuk-heading-s">Heatmap of mumber of 18 to 24 year old males receiving Universal Credit in May 2017</h2>
             <img src="../../public/images/heatmap-carers.png" class="full-width-image govuk-!-margin-bottom-5"/>
         </div>
 
@@ -75,5 +93,6 @@
 
       <p><a href="what-loop.html">Add another type of data for comparisson</a></p>
 
+      </div>
 
 {% endblock %}

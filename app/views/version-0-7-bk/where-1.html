@@ -28,33 +28,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" class="form">
-
-          {% set lepHtml %}
-         
-          {{ govukRadios({
-            idPrefix: "how-to-lep",
-            name: "how-to-lep",
-            fieldset: {
-              legend: {
-                text: "How would you like to view this area?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            items: [
-              {
-                value: "lep-as-whole",
-                text: "For the area as a whole"
-              },
-              {
-                value: "lep-as-authorities",
-                text: "For all local authorities within this area"
-              }
-            ]
-          }) }}
-
-          {% endset -%}
 
       {{ govukRadios({
         idPrefix: "what-area-type",
@@ -73,10 +46,7 @@
           },
           {
             value: "local-enterprise-partnerships",
-            text: "Local Enterprise Partnerships",
-            conditional: {
-              html: lepHtml
-            }
+            text: "Local Enterprise Partnerships"
           },
           {
             value: "westminister-parliamentary-constituencies",
@@ -94,8 +64,9 @@
       }) }}
 
       
-      <button class="govuk-button">Continue</button>
-      </form>
+      <a href="where-2.html" class="govuk-button" id="continue-button">
+          Continue
+        </a>
 
     </div>
 </div>

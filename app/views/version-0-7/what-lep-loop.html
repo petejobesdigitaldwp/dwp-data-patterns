@@ -21,13 +21,13 @@
 
       {{ govukBackLink({
         text: "Back",
-        href: "churchill-main-snapshot.html"
+        href: "where-2.html"
       }) }}
    </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
- 
+
       <h1 class="govuk-heading-xl">What data to measure</h1>  
 
       </div>
@@ -44,7 +44,8 @@
             items: [
               {
                 value: "-",
-                text: "Please select"
+                text: "Please select",
+                selected: true
               },
               {
                 value: "active-enterprises",
@@ -56,8 +57,7 @@
               },
               {
                 value: "carers-allowance",
-                text: "Carers Allowance",
-                selected: true
+                text: "Carers Allowance"
               },
               {
                 value: "claimant-count",
@@ -66,7 +66,7 @@
             ]
           }) }}
     
-          <div class="govuk-radios__conditional" id="conditional-display" style="display: block;">
+          <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
             {{ govukSelect({
               id: "metric",
               name: "metric",
@@ -85,8 +85,7 @@
                 },
                 {
                   value: "number-entitled",
-                  text: "Number of people entitled to Carers Allownace",
-                  selected: true
+                  text: "Number of people entitled to Carers Allownace"
                 },
                 {
                   value: "number-in-reciept",
@@ -105,7 +104,8 @@
               items: [
                 {
                   value: "-",
-                  text: "All age groups"
+                  text: "All age groups",
+                  selected: true
                 },
                 {
                   value: "under-18",
@@ -190,6 +190,7 @@
             }) }}
           </div>
 
+
           <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
                 
@@ -243,15 +244,64 @@
               </div>
 
 
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "add-more-datatypes",
+        name: "add-more-datatypes",
+        fieldset: {
+          legend: {
+            text: "Would you like to compare this to another type of data?",
+            classes: "govuk-label--m"
+          }
+        },
+        hint: {
+          text: "This will help you to look at possible cause and effect relationships."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
-      <a href="churchill-main-snapshot.html" class="govuk-button" id="continue-button">
+      <a href="#" class="govuk-button" id="continue-button">
           Continue
         </a>
       
+        <script type="text/javascript">
+          document.getElementById("add-more-datatypes-1").onclick = function () {
+            document.getElementById("continue-button").href="what-loop-snapshot.html"; 
+          }
+      
+          document.getElementById("add-more-datatypes-2").onclick = function() {
+            document.getElementById("continue-button").href="churchill-main-lep.html"; 
+          };
+      </script>
 
 
     </div>
     <div class="govuk-grid-column-one-third">
+
+        {{ govukTable({
+          classes: "govuk-!-margin-bottom-7",
+          caption: "What you're measuring",
+          captionClasses: "govuk-heading-m",
+          rows: [
+            [
+              {
+                html: "Number of 18 to 24 year old males entitled to <strong>Carers allowance</strong> from May 2007 to May 2017"
+              },
+              {
+                html: "<a href=\"#\" class=\"right\">Change</a>"
+              }
+            ]
+          ]
+        }) }}
 
         <table class="govuk-table govuk-!-margin-bottom-2">
             <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>

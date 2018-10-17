@@ -6,6 +6,16 @@ const router = express.Router()
 module.exports = router
 
 // Branching
+
+router.post('/version-0-7/where-1', function (req, res) { 
+  let areatypeloop = req.session.data['how-to-lep']  
+  if (areatypeloop === 'lep-as-authorities') {
+    res.redirect('/version-0-7/where-2-lep')
+  } else {
+    res.redirect('/version-0-7/where-2')
+  }
+})
+
 router.post('/version-0-7/where-2', function (req, res) { 
     let whereloop = req.session.data['add-more-areas']  
     if (whereloop === 'no') {
@@ -35,6 +45,15 @@ router.post('/version-0-7/where-2-loop', function (req, res) {
         } else {
           res.redirect('/version-0-7/churchill-main-snapshot')
         }
+    }
+  })
+
+  router.post('/version-0-7/what-lep', function (req, res) { 
+    let whatloop = req.session.data['add-more-datatypes']  
+    if (whatloop === 'yes') {
+      res.redirect('/version-0-7/what-lep-loop')
+    } else {
+      res.redirect('/version-0-7/churchill-main-lep-x')
     }
   })
 
