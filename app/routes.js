@@ -25,6 +25,10 @@ router.post('/version-0-7/where-2', function (req, res) {
     }
   })
 
+  router.post('/version-0-7/where-2-lep', function (req, res) { 
+      res.redirect('/version-0-7/what-lep')
+  })
+
 router.post('/version-0-7/where-2-loop', function (req, res) { 
     let whereloop = req.session.data['add-more-areas']  
     if (whereloop === 'no') {
@@ -53,7 +57,7 @@ router.post('/version-0-7/where-2-loop', function (req, res) {
     if (whatloop === 'yes') {
       res.redirect('/version-0-7/what-lep-loop')
     } else {
-      res.redirect('/version-0-7/churchill-main-lep-x')
+      res.redirect('/version-0-7/churchill-main-lep')
     }
   })
 
