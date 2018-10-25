@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Churchill | Find data about a local area
+  What type of area would you like to find data about? | Find data about a local area
 {% endblock %}
 
 {% block content %}
@@ -56,6 +56,15 @@
 
           {% endset -%}
 
+          {% set laHint %}
+
+          {{ govukDetails({
+            summaryText: "What is a local authority?",
+            text: "A local authority is the council responsible for public services and facilities at a local level."
+          }) }}
+
+          {% endset -%}
+
       {{ govukRadios({
         idPrefix: "what-area-type",
         name: "what-area-type",
@@ -69,22 +78,34 @@
         items: [
           {
             value: "local-authorities",
-            text: "Local Authorities"
+            text: "Local Authorities",
+            hint: {
+              html: ""
+            }
           },
           {
             value: "local-enterprise-partnerships",
             text: "Local Enterprise Partnerships",
+            hint: {
+              text: "Groups of local authorities working in partnership with businesses to focus on the local economy and labour market."
+            },
             conditional: {
               html: lepHtml
             }
           },
           {
             value: "westminister-parliamentary-constituencies",
-            text: "Westminister Parliamentary Constituencies"
+            text: "Westminister Parliamentary Constituencies",
+            hint: {
+              html: "Local areas that elect an MP to sit in Parliament."
+            }
           },
           {
             value: "government-office-regions",
-            text: "Government Office Regions"
+            text: "Government Office Regions",
+            hint: {
+              text: "High level areas within Great Britain."
+            }
           },
           {
             value: "countries",
