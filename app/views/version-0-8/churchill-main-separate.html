@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Churchill | Find data about a local area
+{% endblock %}
+
+{% block content %}
+
+
+<div class="top-alignment-correct">
+  <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+      beta
+    </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your
+          <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+ </div>
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full  govuk-!-margin-bottom-5"> 
+            <h1 class="govuk-heading-xl  govuk-!-margin-bottom-3">Exploring local authority data</h1>
+            <p class="govuk-!-margin-bottom-0"><strong>Chosen area:</strong> <span class="key-cube" style="background-color:#F47738;"></span>{{ data['where'] }} (<a href="where-edit.html">Add or remove area</a>)</p>
+      </div>
+  </div>
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full chart-panel-blue govuk-!-margin-bottom-7">
+        <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">When the data is for: </h3>
+            <p class="govuk-!-margin-bottom-0">A time period | <a href="churchill-main-snapshot.html">A specific date</a></p>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">How the data is shown: </h3>
+              <p class="govuk-!-margin-bottom-0"><a href="churchill-main.html">Data in context</a> | <a href="churchill-main-selected.html">Chosen area only</a> | Separate charts | <a href="churchill-main-table.html">Table</a></p>
+          </div>
+    </div>
+   </div>
+
+   <div class="govuk-grid-row snapshot-section govuk-!-margin-bottom-7">
+
+      <div class="govuk-grid-column-full">
+
+          <h2 class="govuk-heading-m">
+              People entitled to Carers Allowance from May 2007 to May 2017 <span class="govuk-!-font-weight-regular">(<a href="what-loop-edit.html">Change</a>)</span>
+          </h2>
+          <!-- <p>Measuring from <select class="govuk-select inline-block"><option selected>May 2007</option><option>August 2007</option><option>November 2007</option></select> to <select class="govuk-select inline-block"><option selected>Feburary 2017</option><option selected>May 2017</option></select></p> -->
+
+          <img src="../../public/images/charts-separate.png" class="full-width-image govuk-!-margin-bottom-3"/>
+                        
+                          
+          <p class="govuk-body-s">Data source: <a href="https://stat-xplore.dwp.gov.uk/">Stat-Xplore</a></p>             
+    </div>
+
+        
+      </div>
+
+      <p><a href="what-loop.html">Add another type of data for comparisson</a></p>
+
+
+{% endblock %}

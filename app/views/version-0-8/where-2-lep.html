@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Where to measure data for - Find data about a local area
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="top-alignment-correct">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+        beta
+      </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "where-1.html"
+      }) }}
+   </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Where to measure data for</h1>    
+
+      <form  method="post" class="form">
+   
+      {% include "version-0-7/lep-select.html" %}
+      
+      <p class="link-beneath-select"><a href="where-map.html">You can also choose areas from a map</a></p>
+
+      <button class="govuk-button">Continue</button>
+
+      </form>
+      
+       
+    </div>
+</div>
+
+
+{% endblock %}
