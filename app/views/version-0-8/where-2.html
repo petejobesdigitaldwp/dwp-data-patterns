@@ -38,7 +38,7 @@ Where to measure data for - Find data about a local area
           <script type="text/javascript">
             (function($){
                   $(function(){
-                    $('select').selectToAutocomplete();
+                   // $('select').selectToAutocomplete();
                   });
                 })(jQuery);
           </script>
@@ -89,11 +89,31 @@ var dropdown_content = $.get("local-authority-select.html");
     if (area_input_count < 10) {
       area_input_count++;
       /*** Add another select typeahead ***/
-      $( "#where_fieldset" ).append( "<div class=\"govuk-form-group\"><label class=\"govuk-label\" for=\"where_"+area_input_count+"\">Local authority <span class=\"remove_area_link\">(<a id=\"remove_"+area_input_count+"\" href=\"#\">remove</a>)</span></label><select class=\"govuk-select js-example-basic-single\" id=\"where_"+area_input_count+"\" name=\"where_"+area_input_count+"\" autofocus=\"autofocus\" autocorrect=\"off\" autocomplete=\"off\">");
+      $( "#where_fieldset" ).append( "<div class=\"govuk-form-group\"><label class=\"govuk-label\" for=\"where_"+area_input_count+"\">Local authority <span>(<a id=\"remove_"+area_input_count+"\" class=\"remove_area_link\" href=\"#\">remove</a>)</span></label><select class=\"govuk-select js-example-basic-single\" id=\"where_"+area_input_count+"\" name=\"where_"+area_input_count+"\" autofocus=\"autofocus\" autocorrect=\"off\" autocomplete=\"off\">");
       $( "#where_"+area_input_count ).load( "local-authority-select.html" );
       $( "#where_fieldset" ).append( "</select></div>" );
+      alert("meh.");
+      $('#where_1').selectToAutocomplete();
 
       /*** /Add another select typeahead ***/
+
+       $( ".remove_area_link" ).unbind("click").click(function() {
+         console.log("hello");
+         if (area_input_count > 1) {
+            area_input_count--;
+            /*** REMOVE ***/
+            $(this).parent().parent().parent().hide();
+            /*** REMOVE ***/
+          }
+          if (area_input_count < 10) {
+            $('#add_area').css({"display":"inline-block"});
+            $('#max_message').css({"display":"none"});
+          }
+          if (area_input_count == 1) {
+            $('.remove_area_link').css({"display":"none"});
+          }
+          return false;
+        })
     }
     if (area_input_count == 10) {
       $('#add_area').css({"display":"none"});
@@ -106,22 +126,7 @@ var dropdown_content = $.get("local-authority-select.html");
   });
 
   $( ".remove_area_link" ).on( "click", function() {
-    if (area_input_count > 1) {
-      area_input_count--;
-      /*** REMOVE ***/
-
-
-
-      /*** REMOVE ***/
-    }
-    if (area_input_count < 10) {
-      $('#add_area').css({"display":"inline-block"});
-      $('#max_message').css({"display":"none"});
-    }
-    if (area_input_count == 1) {
-      $('.remove_area_link').css({"display":"none"});
-    }
-    return false;
+  
   });
 </script>
 
