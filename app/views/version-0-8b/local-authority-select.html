@@ -10,13 +10,19 @@
 </script>
 
 <div class="govuk-form-group">
-<label class="govuk-label govuk-label--m" for="where">
-    What local authority would you like to measure data for?
-  </label>
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+<h1 class="govuk-fieldset__heading">
+    Where would you like to find out about?
+</h1>
+<span id="area-hint" class="govuk-hint">
+    You can search for a local authority, local enterprise partnership, parlimentary constituency, government office region or country.
+  </span>
+</legend>
 
-  <span class="govuk-hint">Start typing to find an area</span>
 
-<select class="govuk-select js-example-basic-single" id="where-2" name="where-2" autofocus="autofocus" autocorrect="off" autocomplete="off">
+<select class="govuk-select js-example-basic-single" id="where" name="where" autofocus="autofocus" autocorrect="off" autocomplete="off">
   
     <option value="" selected="selected">Select an area</option>
     <option value="Aberdeen City">Aberdeen City</option>
@@ -401,4 +407,5 @@
     <option value="York">York</option>
   
   </select>
+  </fieldset>
 </div>

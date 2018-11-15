@@ -28,6 +28,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Choose the type of data you would like to measure",
+              href: "#measure-select-error"
+            },
+            {
+              text: "Choose how you would like to view this data",
+              href: "#metric-error"
+            },
+            {
+              text: "Choose the age group you would like to see data for",
+              href: "#data-list-error"
+            },
+            {
+              text: "Select the sex you would like to see data for",
+              href: "#gender-error"
+            },
+            {
+              text: "Select when you would like to view this data for",
+              href: "#when-choice-error"
+            },
+            {
+              text: "Select yes if you would like to add another type of data",
+              href: "#add-more-datatypes-error"
+            }
+          ]
+        }) }} 
+
       <h1 class="govuk-heading-xl">What data to measure</h1> 
     </div>
     </div>
@@ -36,36 +66,52 @@
       <div class="govuk-grid-column-two-thirds">
 
           <form method="post" class="form">
+      {{ govukSelect({
+        id: "measure-select",
+        classes: "measure-select",
+        name: "measure-select",
+        label: {
+          text: "What type of data would you like to measure?",
+          classes: "govuk-label--m"
+        },
+        errorMessage: {
+          text: "Choose the type of data you would like to measure"
+        },
+        items: [
+          {
+            value: "-",
+            text: "Please select",
+            selected: true
+          },
+          {
+            value: "active-enterprises",
+            text: "Active Enterprises"
+          },
+          {
+            value: "attendance-allowance",
+            text: "Attendance Allowance"
+          },
+          {
+            value: "carers-allowance",
+            text: "Carers Allowance"
+          },
+          {
+            value: "claimant-count",
+            text: "Claimant Count"
+          }
+        ]
+      }) }}
 
-              <script src="../../public/javascripts/jquery-1.11.1.min.js" type="text/javascript"></script>
-              <script src="../../public/javascripts/jquery.select-to-autocomplete.js" type="text/javascript"></script>
-              <script src="../../public/javascripts/jquery-ui.min.js" type="text/javascript"></script>
-              <script type="text/javascript">
-                (function($){
-                      $(function(){
-                        $('#what-select').selectToAutocomplete();
-                      });
-                    })(jQuery);
-              </script> 
-
-        <div class="govuk-form-group">
-            <label class="govuk-label--m" for="what-select" >What would you like to find out about?</label>  
-            <select class="govuk-select js-example-basic-single" id="what-select" name="what-select" autofocus="autofocus" autocorrect="off" autocomplete="off"> 
-              <option value="" selected="selected">Select</option>
-              <option value="active-enterprises">Active enterprises</option>
-              <option value="active-enterprises">Attendance allowance</option>
-              <option value="carers-allowance">Carer's allowance</option>
-              <option value="active-enterprises">Claimant count</option>
-            </select>
-          </div>
-     
-      <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
+      <div class="govuk-radios__conditional" >
         {{ govukSelect({
             id: "metric",
             name: "metric",
             label: {
-                text: "What would you like to know about Carer's Allowance?",
+                text: "How would you like to view this data?",
                 classes: "govuk-label--s"
+            },
+            errorMessage: {
+              text: "Choose how you would like to view this data"
             },
             items: [
             {
@@ -93,6 +139,9 @@
             label: {
               text: "What age group would you like to see data for?",
               classes: "govuk-label--s"
+            },
+            errorMessage: {
+              text: "Choose the age group you would like to see data for"
             },
             items: [
               {
@@ -162,6 +211,9 @@
             },
             hint: {
               text: "The data set is historically divided by binary sex rather than gender."
+            },
+            errorMessage: {
+              text: "Select the sex you would like to see data for"
             },
             items: [
               {
@@ -265,7 +317,7 @@
                       <option>2014</option> 
                       <option>2015</option> 
                       <option>2016</option> 
-                      <option>2017</option>   
+                      <option selected>2017</option>   
                     </select>
                   </div>
                 </div>
@@ -278,9 +330,9 @@
                     
                       <select class="govuk-select govuk-date-input__input govuk-input--width-10 " id="snapshot-date-month" name="snapshot-date-month" type="number" pattern="[0-9]*">
                         <option>February</option> 
-                        <option selected>May</option>  
+                        <option>May</option>  
                         <option>August</option>  
-                        <option>November</option>   
+                        <option selected>November</option>   
                       </select>
                     </div>
                   </div>
@@ -356,6 +408,9 @@
             classes: "govuk-label--m"
           }
         },
+        errorMessage: {
+          text: "Select when you would like to view this data for"
+        },
         items: [
           {
             value: "time-period",
@@ -387,6 +442,9 @@
         hint: {
           text: "This will help you to look at possible cause and effect relationships."
         },
+        errorMessage: {
+          text: "Select yes if you would like to add another type of data"
+        },
         items: [
           {
             value: "yes",
@@ -409,7 +467,7 @@
             <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></div>{{ data['where_1'] }}</td>
+                <td class="govuk-table__cell"></div>{{ data['where'] }}</td>
                 <td class="govuk-table__cell "><a href="#" class="right">Remove</a></td>
               </tr>
             </tbody>
@@ -419,8 +477,7 @@
 </div>
 
 <script type="text/javascript" >
- console.log(document.getElementById('what-select')[0])
-  document.getElementsByClassName('govuk-select')[0].addEventListener('change', function () {
+  document.getElementById('measure-select').addEventListener('change', function () {
       var style = this.value == 'carers-allowance' ? 'block' : 'none';
       document.getElementById('conditional-display').style.display = style;
   });

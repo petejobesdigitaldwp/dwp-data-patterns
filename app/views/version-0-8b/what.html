@@ -36,30 +36,40 @@
       <div class="govuk-grid-column-two-thirds">
 
           <form method="post" class="form">
+      {{ govukSelect({
+        id: "measure-select",
+        classes: "measure-select",
+        name: "measure-select",
+        label: {
+          text: "What would you like to find out about?",
+          classes: "govuk-label--m"
+        },
+        items: [
+          {
+            value: "-",
+            text: "Please select",
+            selected: true
+          },
+          {
+            value: "active-enterprises",
+            text: "Active Enterprises"
+          },
+          {
+            value: "attendance-allowance",
+            text: "Attendance Allowance"
+          },
+          {
+            value: "carers-allowance",
+            text: "Carer's Allowance"
+          },
+          {
+            value: "claimant-count",
+            text: "Claimant Count"
+          }
+        ]
+      }) }}
 
-              <script src="../../public/javascripts/jquery-1.11.1.min.js" type="text/javascript"></script>
-              <script src="../../public/javascripts/jquery.select-to-autocomplete.js" type="text/javascript"></script>
-              <script src="../../public/javascripts/jquery-ui.min.js" type="text/javascript"></script>
-              <script type="text/javascript">
-                (function($){
-                      $(function(){
-                        $('#what-select').selectToAutocomplete();
-                      });
-                    })(jQuery);
-              </script> 
-
-        <div class="govuk-form-group">
-            <label class="govuk-label--m" for="what-select" >What would you like to find out about?</label>  
-            <select class="govuk-select js-example-basic-single" id="what-select" name="what-select" autofocus="autofocus" autocorrect="off" autocomplete="off"> 
-              <option value="" selected="selected">Select</option>
-              <option value="active-enterprises">Active enterprises</option>
-              <option value="active-enterprises">Attendance allowance</option>
-              <option value="carers-allowance">Carer's allowance</option>
-              <option value="active-enterprises">Claimant count</option>
-            </select>
-          </div>
-     
-      <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
+      <div class="govuk-radios__conditional  govuk-!-margin-bottom-7" id="conditional-display" style="display: none;">
         {{ govukSelect({
             id: "metric",
             name: "metric",
@@ -87,103 +97,7 @@
             ]
           }) }}
 
-          {{ govukSelect({
-            id: "data-list",
-            name: "data-list",
-            label: {
-              text: "What age group would you like to see data for?",
-              classes: "govuk-label--s"
-            },
-            items: [
-              {
-                value: "-",
-                text: "All age groups",
-                selected: true
-              },
-              {
-                value: "under-18",
-                text: "Under 18"
-              },
-              {
-                value: "18-to-24",
-                text: "18 to 24"
-              },
-              {
-                value: "25-to-29",
-                text: "25 to 29"
-              },
-              {
-                value: "30-to-34",
-                text: "30 to 34"
-              },
-              {
-                value: "35-to-39",
-                text: "35 to 39"
-              },
-              {
-                value: "40-to-44",
-                text: "40 to 44"
-              },
-              {
-                value: "45-to-49",
-                text: "45 to 49"
-              },
-              {
-                value: "50-to-54",
-                text: "50 to 54"
-              },
-              {
-                value: "55-to-59",
-                text: "55 to 59"
-              },
-              {
-                value: "60-to-64",
-                text: "60 to 64"
-              },
-              {
-                value: "over-64",
-                text: "Over 64"
-              },
-              {
-                value: "unknown",
-                text: "Unknown"
-              }
-            ]
-          }) }}
-
-          {{ govukRadios({
-            idPrefix: "gender",
-            name: "gender",
-            fieldset: {
-              legend: {
-                text: "What sex would you like to see data for?",
-                classes: "govuk-label--s"
-              }
-            },
-            hint: {
-              text: "The data set is historically divided by binary sex rather than gender."
-            },
-            items: [
-              {
-                value: "male",
-                text: "Male"
-              },
-              {
-                value: "female",
-                text: "Female"
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "all",
-                text: "All",
-                hint: {
-                  text: "This will show a combined value"
-                }
-              }
-            ]
-          }) }}
+          
       </div>
 
       {% set rangeHtml %}
@@ -297,7 +211,7 @@
           <fieldset class="govuk-fieldset" aria-describedby="snapshot-date-hint" role="group">
             
             <legend class="govuk-fieldset__legend govuk-label--s">
-              What date would you like to view data for?
+              What date would you like to see data for?
             </legend>
                       
             <div class="govuk-date-input" id="snapshot-date">
@@ -352,7 +266,7 @@
         name: "when-choice",
         fieldset: {
           legend: {
-            text: "When would you like to view this data for?",
+            text: "When would you like to see this data for?",
             classes: "govuk-label--m"
           }
         },
@@ -409,7 +323,7 @@
             <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"></div>{{ data['where_1'] }}</td>
+                <td class="govuk-table__cell"></div>{{ data['where'] }}</td>
                 <td class="govuk-table__cell "><a href="#" class="right">Remove</a></td>
               </tr>
             </tbody>
@@ -419,8 +333,7 @@
 </div>
 
 <script type="text/javascript" >
- console.log(document.getElementById('what-select')[0])
-  document.getElementsByClassName('govuk-select')[0].addEventListener('change', function () {
+  document.getElementById('measure-select').addEventListener('change', function () {
       var style = this.value == 'carers-allowance' ? 'block' : 'none';
       document.getElementById('conditional-display').style.display = style;
   });

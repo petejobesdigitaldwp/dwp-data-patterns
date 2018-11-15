@@ -27,16 +27,42 @@ Where to measure data for - Find data about a local area
    </div>
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+      <h1 class="govuk-heading-xl">Where to measure data for</h1>    
 
+    </div>
     <div class="govuk-grid-column-two-thirds">
       
-      <form action="/version-0-8/what" method="post" class="form">
+      <form method="post" class="form">
 
-      {% include "version-0-8/local-authority-select-2.html" %}
-      
-      <p><a href="where-2-loop.html">Add another area – you can select up to ten to compare</a></p>
-      
-      <div class="govuk-inset-text">You can also <a href="where-map.html">choose areas from a map</a></div>
+      {% include "version-0-7/local-authority-select-2.html" %}
+      <p class="link-beneath-select"><a href="where-map-loop.html">You can also choose areas from a map</a></p>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "add-more-areas",
+        name: "add-more-areas",
+        fieldset: {
+          legend: {
+            text: "Would you like to add another area?",
+            classes: "govuk-label--m"
+          }
+        },
+        hint: {
+          text: "You can select up to ten areas to compare."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
       <button class="govuk-button">Continue</button>
 

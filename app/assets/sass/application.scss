@@ -1,3 +1,6 @@
+
+$govuk-font-family: Helvetica, Arial, sans-serif;
+
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
@@ -376,3 +379,7 @@ $govuk-global-styles: true;
   color: #FFF;
 }
 
+/**** Multiple areas ****/
+
+.remove_area_link { display:none; }
+#max_message { display:none; }

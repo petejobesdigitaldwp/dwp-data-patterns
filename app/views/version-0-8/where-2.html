@@ -30,21 +30,99 @@ Where to measure data for - Find data about a local area
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/version-0-8/what" method="post" class="form">
+        <form method="post" class="form">
    
-      {% include "version-0-8/local-authority-select.html" %}
+          <script src="../../public/javascripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+          <script src="../../public/javascripts/jquery.select-to-autocomplete.js" type="text/javascript"></script>
+          <script src="../../public/javascripts/jquery-ui.min.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            (function($){
+                  $(function(){
+                    $('select').selectToAutocomplete();
+                  });
+                })(jQuery);
+          </script>
+          
+          
+            <fieldset class="govuk-fieldset" id="where_fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Where would you like to find out about?
+            </h1>
+          
+            </legend>
 
-      <p><a href="where-2-loop.html">Add another area – you can select up to ten to compare</a></p>
-      
-      <div class="govuk-inset-text">You can also <a href="where-map.html">choose areas from a map</a></div>
+            <script type="text/javascript">
+              var area_input_count = 1;
+            </script>
 
-      <button class="govuk-button">Continue</button>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="where_1" >Local authority <span class="remove_area_link">(<a  href="#" class="govuk-link">remove</a>)</span></label>  
+            <select class="govuk-select js-example-basic-single" id="where_1" name="where_1" autofocus="autofocus" autocorrect="off" autocomplete="off"> 
+              {% include "version-0-8/local-authority-select.html" %}
+            </select>
+          </div>
 
-      </form>
+            </fieldset>
+          
+    
+            <p><a href="#" id="add_area" class="govuk-link">Add another area - you can compare up to ten areas</a></p>
+            <div class="govuk-inset-text" id="max_message">
+                You've reached the maximum amount of areas you can compare.
+              </div>
+    
+          <button class="govuk-button">Continue</button>
+    
+          </form>
       
        
     </div>
 </div>
 
+<script type="text/javascript">
+
+
+var dropdown_content = $.get("local-authority-select.html");
+
+
+  $( "#add_area" ).click(function() {
+    if (area_input_count < 10) {
+      area_input_count++;
+      /*** Add another select typeahead ***/
+      $( "#where_fieldset" ).append( "<div class=\"govuk-form-group\"><label class=\"govuk-label\" for=\"where_"+area_input_count+"\">Local authority <span class=\"remove_area_link\">(<a id=\"remove_"+area_input_count+"\" href=\"#\">remove</a>)</span></label><select class=\"govuk-select js-example-basic-single\" id=\"where_"+area_input_count+"\" name=\"where_"+area_input_count+"\" autofocus=\"autofocus\" autocorrect=\"off\" autocomplete=\"off\">");
+      $( "#where_"+area_input_count ).load( "local-authority-select.html" );
+      $( "#where_fieldset" ).append( "</select></div>" );
+
+      /*** /Add another select typeahead ***/
+    }
+    if (area_input_count == 10) {
+      $('#add_area').css({"display":"none"});
+      $('#max_message').css({"display":"block"});
+    }
+    if (area_input_count > 1) {
+      $('.remove_area_link').css({"display":"inline-block"});
+    }
+    return false;
+  });
+
+  $( ".remove_area_link" ).on( "click", function() {
+    if (area_input_count > 1) {
+      area_input_count--;
+      /*** REMOVE ***/
+
+
+
+      /*** REMOVE ***/
+    }
+    if (area_input_count < 10) {
+      $('#add_area').css({"display":"inline-block"});
+      $('#max_message').css({"display":"none"});
+    }
+    if (area_input_count == 1) {
+      $('.remove_area_link').css({"display":"none"});
+    }
+    return false;
+  });
+</script>
 
 {% endblock %}

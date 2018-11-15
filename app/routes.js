@@ -71,6 +71,60 @@ router.post('/version-0-7/what-loop', function (req, res) {
   })
 
 
+  // Branching v 0.8
+
+router.post('/version-0-8/where-1', function (req, res) { 
+  let areatypeloop = req.session.data['how-to-lep']  
+  if (areatypeloop === 'lep-as-authorities') {
+    res.redirect('/version-0-8/where-2-lep')
+  } else {
+    res.redirect('/version-0-8/where-2')
+  }
+})
+
+
+  router.post('/version-0-8/where-2-lep', function (req, res) { 
+      res.redirect('/version-0-8/what-lep')
+  })
+
+  router.post('/version-0-8/where-2', function (req, res) { 
+    res.redirect('/version-0-8/what')
+})
+
+
+  router.post('/version-0-8/what', function (req, res) { 
+    let whatloop = req.session.data['add-more-datatypes']  
+    if (whatloop === 'yes') {
+      res.redirect('/version-0-8/what-loop')
+    } else {
+        let when = req.session.data['when-choice']  
+        if (when === 'time-period') {
+          res.redirect('/version-0-8/churchill-main')
+        } else {
+          res.redirect('/version-0-8/churchill-main-snapshot')
+        }
+    }
+  })
+
+  router.post('/version-0-8/what-lep', function (req, res) { 
+    let whatloop = req.session.data['add-more-datatypes']  
+    if (whatloop === 'yes') {
+      res.redirect('/version-0-8/what-lep-loop')
+    } else {
+      res.redirect('/version-0-8/churchill-main-lep')
+    }
+  })
+
+router.post('/version-0-8/what-loop', function (req, res) { 
+    let whatloop = req.session.data['add-more-datatypes']  
+    if (whatloop === 'yes') {
+      res.redirect('/version-0-8/what-loop')
+    } else {
+      res.redirect('/version-0-8/churchill-main')
+    }
+  })
+
+
   // Branching TEST VERSION
 router.post('/test-version/where-2', function (req, res) { 
   let whereloop = req.session.data['add-more-areas']  
