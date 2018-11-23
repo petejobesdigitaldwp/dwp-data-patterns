@@ -40,25 +40,19 @@
               <script src="../../public/javascripts/jquery-1.11.1.min.js" type="text/javascript"></script>
               <script src="../../public/javascripts/jquery.select-to-autocomplete.js" type="text/javascript"></script>
               <script src="../../public/javascripts/jquery-ui.min.js" type="text/javascript"></script>
-              <script type="text/javascript">
-                (function($){
-                      $(function(){
-                        $('#what-select').selectToAutocomplete();
-                      });
-                    })(jQuery);
-              </script> 
 
         <div class="govuk-form-group">
             <label class="govuk-label--m" for="what-select" >What would you like to find out about?</label>  
             <select class="govuk-select js-example-basic-single" id="what-select" name="what-select" autofocus="autofocus" autocorrect="off" autocomplete="off"> 
-              <option value="" selected="selected">Select</option>
+              <option value=""></option>
               <option value="active-enterprises">Active enterprises</option>
               <option value="active-enterprises">Attendance allowance</option>
               <option value="carers-allowance">Carer's allowance</option>
               <option value="active-enterprises">Claimant count</option>
             </select>
-          </div>
-     
+          </div>     
+
+
       <div class="govuk-radios__conditional" id="conditional-display" style="display: none;">
         {{ govukSelect({
             id: "metric",
@@ -417,14 +411,19 @@
         <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-!-margin-bottom-6">Add another area</a></p>
     </div>
 </div>
-
-<script type="text/javascript" >
- console.log(document.getElementById('what-select')[0])
-  document.getElementsByClassName('govuk-select')[0].addEventListener('change', function () {
-      var style = this.value == 'carers-allowance' ? 'block' : 'none';
-      document.getElementById('conditional-display').style.display = style;
-  });
-</script>
   
 {% endblock %}
 
+{% block pageScripts %}
+<script type="text/javascript" >
+
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector('#what-select')
+  })
+
+  document.getElementById('what-select').addEventListener('change', function () {
+      document.getElementById('conditional-display').style.display = 'block';
+  });
+
+</script>
+{% endblock %}

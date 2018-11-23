@@ -12,10 +12,12 @@
     "test": "gulp test && npm run lint"
   },
   "dependencies": {
+    "accessible-autocomplete": "^1.6.2",
     "basic-auth": "^2.0.0",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.1",
     "browser-sync": "^2.11.1",
+    "browserify": "^16.2.3",
     "cookie-parser": "^1.4.3",
     "cross-spawn": "^6.0.5",
     "dotenv": "^6.0.0",

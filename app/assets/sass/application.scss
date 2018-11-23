@@ -350,6 +350,10 @@ $govuk-global-styles: true;
 
 /*** AUTOCOMPLETE ***/
 
+.autocomplete__menu {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .ui-autocomplete {
   background-color: #fff;
   border: 2px solid #0b0c0c;
@@ -381,5 +385,5 @@ $govuk-global-styles: true;
 
 /**** Multiple areas ****/
 
-.remove_area_link { display:none; }
+.remove_area_span { display:none; }
 #max_message { display:none; }
