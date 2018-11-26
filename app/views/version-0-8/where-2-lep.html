@@ -30,21 +30,47 @@ Where to measure data for - Find data about a local area
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Where to measure data for</h1>    
+        <form method="post" class="form">
 
-      <form  method="post" class="form">
-   
-      {% include "version-0-7/lep-select.html" %}
-      
-      <p class="link-beneath-select"><a href="where-map.html">You can also choose areas from a map</a></p>
+      <fieldset class="govuk-fieldset" id="where_fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Where would you like to find out about?
+        </h1>
 
-      <button class="govuk-button">Continue</button>
+        </legend>
+
+        <div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="where_1" >Local enterprise partnership <span class="remove_area_span">(<a href="#"  class="remove_area_link">remove</a>)</span></label>
+            <select class="govuk-select js-example-basic-single" id="where_1" name="where_1" autofocus="autofocus" autocorrect="off" autocomplete="off">
+              {% include "version-0-8/lep-select.html" %}
+            </select>
+          </div>
+        <div>
+
+        </fieldset>
+
+        <button class="govuk-button">Continue</button>
 
       </form>
       
        
     </div>
 </div>
+
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript">
+
+  $(function() {
+      accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#where_1')
+      })
+    })
+
+</script>
 
 
 {% endblock %}

@@ -2,9 +2,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
+Where to measure data for - Find data about a local area
+
 {% endblock %}
 
 {% block content %}
+
 
 <div class="top-alignment-correct">
     <div class="govuk-phase-banner">
@@ -26,35 +29,119 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-   
-      <h1 class="govuk-heading-xl">Where to measure data for</h1>    
 
-    </div>
-    <div class="govuk-grid-column-two-thirds">
-      
-        {% include "version-0-7/local-authority-select.html" %}
-      <p class="link-beneath-select"><a href="where-map-loop.html">You can also choose areas from a map</a></p>
+        <form class="form">
 
 
-      <a href="churchill-main.html" class="govuk-button" id="continue-button">
-          Continue
-        </a>
-      
+            <fieldset class="govuk-fieldset" id="where_fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Where would you like to find out about?
+            </h1>
+
+            </legend>
+
+            <div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="where_1" >Local authority <span class="remove_area_span">(<a href="#"  class="remove_area_link">remove</a>)</span></label>
+                <select class="govuk-select js-example-basic-single" id="where_1" name="where_1" autofocus="autofocus" autocorrect="off" autocomplete="off">
+                  {% include "version-0-8/local-authority-select.html" %}
+                </select>
+              </div>
+            <div>
+
+            </fieldset>
 
 
-    </div>
-    <div class="govuk-grid-column-one-third">
-        <table class="govuk-table govuk-!-margin-bottom-2">
-            <caption class="govuk-table__caption govuk-heading-m">Where you&#39;ve chosen</caption>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><div class="key-cube" style="background-color:#F47738;"></div>{{ data['where'] }}</td>
-                <td class="govuk-table__cell "><a href="#" class="right">Remove</a></td>
-              </tr>
-            </tbody>
-          </table>
-        
+            <p><a href="#" id="add_area" class="govuk-link">Add another area - you can compare up to ten areas</a></p>
+            <div class="govuk-inset-text" id="max_message">
+                You've reached the maximum amount of areas you can compare.
+              </div>
+
+              <a href="churchill-main.html" class="govuk-button" id="continue-button">
+                  Continue
+                </a>
+              
+
+          </form>
+
+
     </div>
 </div>
 
 {% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" >
+  var area_input_count = 1;
+
+  // make a copy of the select box div so we can reuse later when we add a new one
+  const origBlock = $(".govuk-form-group:last").parent().html()
+
+
+  $(function() {
+      accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#where_1')
+      })
+
+      $(document).on("click", ".remove_area_link", function(event) {
+        event.preventDefault()
+
+        if (area_input_count > 1) {
+           area_input_count--;
+           /*** REMOVE ***/
+           //$(this).parent().parent().parent().hide();
+           $(this).parent().parent().parent().remove();
+           /*** REMOVE ***/
+         }
+         if (area_input_count < 10) {
+           $('#add_area').css({"display":"inline-block"});
+           $('#max_message').css({"display":"none"});
+         }
+         if (area_input_count == 1) {
+           $('.remove_area_span').css({"display":"none"});
+         }
+         return false;
+
+      })
+
+      $(document).on("click", "#add_area", function(event) {
+        event.preventDefault()
+
+
+        if (area_input_count < 10) {
+          area_input_count++;
+
+          /*** Add select block in again with new ID ***/
+          $("fieldset").append(origBlock.replace(/where_1/g, `where_${area_input_count}`))
+
+          accessibleAutocomplete.enhanceSelectElement({
+                selectElement: document.querySelector(`#where_${area_input_count}`)
+          })
+
+          $('.remove_area_span').css({"display":"inline-block"});
+        }
+        else if (area_input_count == 10) {
+          $('#add_area').css({"display":"none"});
+          $('#max_message').css({"display":"block"});
+        }
+        else if (area_input_count > 1) {
+          $('.remove_area_link').css({"display":"inline-block"});
+        }
+        return false;
+      });
+
+  })
+
+</script>
+
+
+{% endblock %}
+
+
+
+
+
+
+   
+
+
