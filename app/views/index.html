@@ -2,91 +2,28 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  DWP Churchill | GOV.UK Prototype Kit
+  Examine a place | GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Churchill (DWP Data tool)
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
+        Examine a place
+        <span class="govuk-caption-xl">Version 0.1</span>
+      </h1>
       <p>
-        This is the prototype for the DWP Churchill project. This is a data tool to allow users to analyse local data in context and help with decision making.
+        This is the prototype for Examine a Place. This is a service to allow users to look at local skills and labour market data in context and help with decision making.
       </p>
 
       
 
       <h2 class="govuk-heading-l">Prototypes</h2>
+      <h3><a href="version-0-1">Version 0.1</a></h3>
 
-      <h3 class="govuk-heading-m"><a href="version-0-8/">Version 0.8 (New loop for adding multiple areas)</a><h3>
-          <p><strong>Notes:</strong> Replaced the add multiple areas look with a pattern from Get Your State Pension team.</p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li><a href="version-0-8/churchill-main.html">0.8 - Churchill UI (Chart: Selected areas, over time)</a></li>
-                <li><a href="version-0-8/churchill-main-snapshot.html">0.8 - Churchill UI (Barchart)</a></li>
-              </ul>
-
-
-      <h3 class="govuk-heading-m"><a href="version-0-7/">Version 0.7 (Find info about a place, with both types of chart, edit journeys)</a><h3>
-        <p><strong>Notes:</strong> Location select now updated w/ AutoComplete</a>. Working on carrying data values through to make more interactive. Multiple charts on Barcode Page still needs thought.</p>
-          <ul class="govuk-list govuk-list--bullet">
-              <li><a href="version-0-7/churchill-main.html">0.7 - Churchill UI (Chart: Selected areas, over time)</a></li>
-              <li><a href="version-0-7/churchill-main-snapshot.html">0.6 - Churchill UI (Barchart)</a></li>
-            </ul>
-
-            <h3 class="govuk-heading-m"><a href="test-version/">10/10/18 User Testing Version</a><h3>
-              <p><strong>Notes:</strong> Location select now updated w/ AutoComplete</a>. Select any local authority.</p>
-    
-
-      <h3 class="govuk-heading-m"><a href="version-0-6/">Version 0.6 (Find info about a place, with both types of chart, edit journeys)</a><h3>
-        <p>Rationalised the display of the chart page and linked it up to the edit/add/change journeys.</p>
-          <ul class="govuk-list govuk-list--bullet">
-              <li><a href="version-0-6/churchill-main.html">0.6 - Churchill UI (Chart: Selected areas, over time), Navigating via edit links within labels</a></li>
-              <li><a href="version-0-6/churchill-main-snapshot.html">0.6 - Churchill UI (Barchart), Navigating via edit links within labels</a></li>
-            </ul>
-
-      <h3 class="govuk-heading-m"><a href="version-0-5/">Version 0.5 (Place and Subject of Interest Pages, initial integration)</a><h3>
-          <p>Adding the option to see what makes a place or a dataset particularly interesting. This needs fleshing out in terms of data, but would highlight outliers or extremes in the data.</p>
-          <p>Note: Select boxes for location would be based on <a href="https://govuk-location-picker-demo.herokuapp.com/country-of-birth">GOV.UK Location Picker w/ AutoComplete</a>. Date entry on the 'when' page may have to use select box as the number of dates that can be chosen are limited to a defined data set.</p>
-  
-
-      <h3 class="govuk-heading-m"><a href="version-0-4/">Version 0.4 (Broader proposition)</a><h3>
-        <p>Broadening out the proposition so that the user chooses whether to look primarily for data about a place, or about a subject.</p>
-        <p>Note: Select boxes for location would be based on <a href="https://govuk-location-picker-demo.herokuapp.com/country-of-birth">GOV.UK Location Picker w/ AutoComplete</a>. Date entry on the 'when' page may have to use select box as the number of dates that can be chosen are limited to a defined data set.</p>
-
-      <h3 class="govuk-heading-m"><a href="version-0-3/">Version 0.3</a><h3>
-          <p>Experimenting with a secondary navigation at the top of the page once viewing charts.</p>
-
-        <h3 class="govuk-heading-m"><a href="version-0-2/">Version 0.2</a><h3>
-          <p>Experimenting with drop down navigation at the top of the page once viewing charts, closer to David's new nav prototype but using an initial process to get into the main stats page.</p>
-      
-        <h3 class="govuk-heading-m"><a href="version-0-1/">Version 0.1</a><h3>
-          <p>Initial prototype designed by Pete in his first week. Aiming to simplify user journey and navigation out as much as possible without losing functionality. GDS styles have been used where possible.</p>
-          <p>New features include large text stats on snapshot and a table view of data for better accessibility.</p>
-          <p>Note: forms would use predictive input rather than select box.</p>
-          <h4 class="govuk-heading-s">Jump to</h4>
-          <ul class="govuk-list govuk-list--bullet">
-          <li><a href="version-0-1/churchill-main.html">Churchill UI (Chart: Selected areas, over time)</a></li>
-          <li><a href="version-0-1/churchill-main-table.html">Churchill UI (Table: Selected areas, over time)</a></li>
-          <li><a href="version-0-1/churchill-main-unselected-areas.html">Churchill UI (Chart: All areas, over time)</a></li>
-          <li><a href="version-0-1/churchill-main-separate-charts.html">Churchill UI (Separate charts: Selected areas, over time)</a></li>
-          <li><a href="version-0-1/churchill-main-snapshot.html">Churchill UI (Chart: Snapshot of Selected areas)</a></li>
-        </ul>
-
-        <h3 class="govuk-heading-m">Tool page links for Stuart<h3>
-          
-            <h4 class="govuk-heading-s">Jump to</h4>
-            <ul class="govuk-list govuk-list--bullet">
-            <li><a href="version-0-1/churchill-main.html">0.1 - Churchill UI (Chart: Selected areas, over time)</a></li>
-            <li><a href="version-0-1/churchill-main-snapshot.html">0.1 - Churchill UI (Chart: Snapshot of Selected areas)</a></li>
-            <li><a href="version-0-2/churchill-main.html">0.2 - Churchill UI (Chart: Selected areas, over time), navigated via dropdown</a></li>
-            <li><a href="version-0-3/churchill-main.html">0.3 - Churchill UI (Chart: Selected areas, over time), navigated via secondary nav at top</a></li>
-            <li><a href="version-0-4/churchill-main.html">0.4 - Churchill UI (Chart: Selected areas, over time), navigated via sidebar</a></li>
-            <li><a href="version-0-6/churchill-main.html">0.6 - Churchill UI (Chart: Selected areas, over time), Navigating via edit links within labels</a></li>
-            <li><a href="version-0-6/churchill-main-snapshot.html">0.6 - Churchill UI (Barchart), Navigating via edit links within labels</a></li>
-          </ul>
     </div>
 </div>
 
