@@ -20,3 +20,48 @@ $govuk-global-styles: true;
 // Phase banner correction
 
 .govuk-phase-banner { margin-top:-30px; margin-bottom:30px; }
+
+/*** AUTOCOMPLETE ***/
+
+.autocomplete__menu {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.ui-autocomplete {
+  background-color: #fff;
+  border: 2px solid #0b0c0c;
+  border-top: 0;
+  color: #34384b;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 4px);
+  width: 200px;
+  max-height: 300px;
+  overflow-x: hidden;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+}
+.ui-autocomplete .ui-menu-item {
+  border-top: 1px solid #bfc1c3;
+  display: block;
+  padding: 4px 6px;
+  color: #34384b;
+  cursor: pointer;
+}
+.ui-autocomplete .ui-menu-item:first-child {
+  border-top: none;
+}
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+  background-color: #005ea5;
+  color: #FFF !important;
+}
+
+.areaname {
+  display:block;
+}
+
+.areatype {
+  font-size:16px;
+  color: #70777B;
+  display:block;
+}
