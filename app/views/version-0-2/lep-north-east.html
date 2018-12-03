@@ -14,33 +14,67 @@
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "index.html"
-    },
-    {
-      text: "Local enterprise partnerships",
-      href: "where.html"
-    },
-    {
-      text: "North east"
-    }
-  ]
-}) }}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Local enterprise partnerships</span>
       <h1 class="govuk-heading-xl">
         North East
       </h1>
-      <p class="govuk-body-l">
-        The largest employer in this area is <strong>the National Health Service</strong> and the most sought after skillset is <strong>administrative skills</strong>.
-      </p>
+    </div>
+  </div>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-panel govuk-panel--confirmation">
+        <div class="govuk-panel__body">
+            The largest employer in this area is <strong>the National Health Service</strong> and the most sought after skillset is <strong>nursing</strong>.
+        </div>
+      </div>
+
+      <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How we found this out
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We use data from HMRC to establish who are the largest employers in each area. We use job data from Adzuna to look at what skills people are looking for. You can take also see <a href="">in depth employment data for North East</a>.
+          </div>
+        </details>
 
     </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">
+        Authorities in this area
+      </h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Durham</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Gateshead</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="la-newcastle">Newcastle upon Tyne</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">North Tyneside</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Northumbria</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">South Tyneside</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Sunderland</a>
+        </li>
+      </ul>
+    </div>
+
 </div>
 
 {% endblock %}
