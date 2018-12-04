@@ -65,3 +65,22 @@ $govuk-global-styles: true;
   color: #70777B;
   display:block;
 }
+
+/*** ARROWS ***/
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #006435;
+}
+
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #df3034;
+}
