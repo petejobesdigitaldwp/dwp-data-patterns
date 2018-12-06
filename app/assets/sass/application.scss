@@ -74,6 +74,8 @@ $govuk-global-styles: true;
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
   border-bottom: 9px solid #006435;
+  display:inline-block;
+  float:right;
 }
 
 
@@ -83,4 +85,14 @@ $govuk-global-styles: true;
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
   border-top: 9px solid #df3034;
+  display:inline-block;
+  float:right;
+}
+
+.steady-square {
+  width: 18px; 
+  height: 9px; 
+  background-color:	#bfc1c3;
+  display:inline-block;
+  float:right;
 }
