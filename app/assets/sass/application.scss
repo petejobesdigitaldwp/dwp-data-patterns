@@ -18,6 +18,7 @@ $govuk-global-styles: true;
 // CUSTOM STYLES
 
 .full-width-image { width:100%; }
+.section-border-top { border-top: 1px solid #bfc1c3; padding-top:15px; }
 
 // Phase banner correction
 
@@ -33,9 +34,7 @@ $govuk-global-styles: true;
 
 .volumetrics-completion-selected .summary {
   color: #0b0c0c;
-  border-bottom: 1px solid #bfc1c3;
   display: block;
-  padding-bottom:8px;
   font-weight: bold;
 }
 
