@@ -19,6 +19,8 @@ $govuk-global-styles: true;
 
 .full-width-image { width:100%; }
 .section-border-top { border-top: 1px solid #bfc1c3; padding-top:15px; }
+.two-col { column-count: 2; column-gap: 30px; } 
+.three-col { column-count: 3; column-gap: 30px; } 
 
 // Phase banner correction
 
@@ -50,6 +52,20 @@ $govuk-global-styles: true;
 
 .autocomplete__menu {
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.autocomplete__input {
+  background-color: #FFF;
+  min-height: 40px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 0px;
+    -webkit-appearance: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 0px;
 }
 
 .ui-autocomplete {
