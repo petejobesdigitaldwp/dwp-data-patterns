@@ -26,11 +26,56 @@ $govuk-global-styles: true;
 
 .govuk-phase-banner { margin-top:-30px; margin-bottom:30px; }
 
+/// STAT BOX
+
+.headline-stat-box {
+  font-family: helvetica, arial, sans;
+  font-size:19px;
+}
+
+.headline-stat-box .title {
+  font-size:24px;
+  color: #0b0c0c;
+  display: block;
+  font-weight: bold;
+}
+
+.headline-stat-box .figure {
+  font-size: 48px;
+  line-height: 1.0416666667;
+  margin:8px 0;
+  font-weight: bold;
+  display:block;
+  color: #097F96;
+}
+
+.headline-stat-box .date-range {
+  display: block;
+}
+
+.headline-stat-box .detail {
+  margin-bottom:0px;
+}
+
+.headline-stat-box .increase {
+  font-size:24px;
+  display:inline-block;
+}
+
+.headline-stat-box .increase::after {
+  content: '\25B2';
+  color: #bfc1c3;
+  float:none;
+}
+
+.headline-stat-box .prior-date-range {
+  display: inline-block;
+}
+
 /// Volumetrics
 
 .volumetrics-completion-selected {
   font-family: helvetica, arial, sans;
-  margin-top: 15px;
   font-size:19px;
 }
 
@@ -54,7 +99,7 @@ $govuk-global-styles: true;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.autocomplete__input {
+.header-search .autocomplete__input {
   background-color: #FFF;
   min-height: 40px;
     box-sizing: border-box;
