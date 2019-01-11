@@ -72,6 +72,12 @@ $govuk-global-styles: true;
   display: inline-block;
 }
 
+.graph-figure .title {
+  font-size:19px;
+  border-bottom:1px solid #bfc1c3; 
+  padding-bottom:12px;
+}
+
 /// Volumetrics
 
 .volumetrics-completion-selected {

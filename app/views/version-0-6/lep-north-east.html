@@ -1,0 +1,124 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Examine a place | GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Local enterprise partnerships</span>
+      <h1 class="govuk-heading-xl">
+        North East
+      </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<h2 class="govuk-heading-m">Supply of digital skills</h2>
+<ul>
+  <li><a href="">Students succesfully completing digital skills courses</a></li>
+  <li><a href="">Gross Value Added (GVA)</a></li>
+  <li><a href="">Gross Value Added (GVA)</a></li>
+</ul>
+
+<h2 class="govuk-heading-m">Demand for digital skills</h2>
+<ul>
+  <li><a href="">Digital skills by location</a></li>
+  <li><a href="">Number of vacancies requiring digital skills</a></li>
+  <li><a href="">Top digital skills by industry sector</a></li>
+</ul>
+
+<h2 class="govuk-heading-m">Demographics</h2>
+<ul>
+  <li><a href="">Gross Value Added (GVA)</a></li>
+  <li><a href="">Population</a></li>
+  <li><a href="">Employment</a></li>
+</ul>
+
+     
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+        <h3 class="govuk-heading-m section-border-top">
+            Find specific data
+          </h3>
+          <form method="post" class="form">
+
+              <div class="govuk-form-group govuk-!-margin-bottom-4">
+                  <div id="autocomplete"></div>
+                </div>
+      
+              <button class="govuk-button">Continue</button>
+      
+          </form>
+
+
+
+      <h3 class="govuk-heading-m section-border-top">
+        Authorities in this area
+      </h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Durham</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Gateshead</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="la-newcastle">Newcastle upon Tyne</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">North Tyneside</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Northumberland</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">South Tyneside</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Sunderland</a>
+        </li>
+      </ul>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script type="text/javascript">
+  
+  const dataitems = [
+  'GVA by industry sector',
+  'Digital skills demand by industry sector',
+  'United Kingdom'
+]
+
+accessibleAutocomplete({
+  element: document.querySelector('#autocomplete'),
+  displayMenu: 'overlay',
+  showAllValues: true,
+  id: 'autocomplete', // To match it to the existing <label>.
+  source: dataitems
+})
+
+
+</script>
+
+{% endblock %}
