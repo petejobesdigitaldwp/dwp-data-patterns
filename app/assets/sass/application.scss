@@ -188,3 +188,12 @@ $govuk-global-styles: true;
   background-color:	#bfc1c3;
   float:right;
 }
+
+/// MAP
+
+#map {
+  width:100%;
+  height:250px;
+}
+
+.leaflet-control-attribution { display:none; }

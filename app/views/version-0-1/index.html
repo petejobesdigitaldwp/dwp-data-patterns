@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Examine a place | GOV.UK Prototype Kit
+  Digital skills information service | GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -17,15 +17,31 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Examine a place
+        Digital skills information service
       </h1>
       <p class="govuk-body-l">
-        This service lets you find out who are the largest employers in a particular place and what skills they need.
+        This service lets you find out about the digital skills landscape in a local enterprise partnership or local authority.
       </p>
-
-      <div class="govuk-inset-text">
-        This service is also available in <a href="#">Welsh (Cymraeg)</a>.
-      </div>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Sign in
+          </h2>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Email address
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="text">
+        </div>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password">
+            Password
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="password" name="password" type="password">
+        </div>
+      </fieldset>
 
         {{ govukButton({
             text: "Start now",

@@ -11,26 +11,3 @@ router.post('/version-0-1/where', function (req, res) {
   res.redirect('/version-0-1/lep-north-east')
 })
 
-// Branching 0.2
-
-router.post('/version-0-2/where', function (req, res) { 
-  res.redirect('lep-north-east')
-})
-
-// Branching 0.3
-
-router.post('/version-0-3/where', function (req, res) { 
-  res.redirect('lep-north-east')
-})
-
-// Branching 0.4
-
-router.post('/version-0-4/where', function (req, res) { 
-  res.redirect('la-newcastle')
-})
-
-// Branching 0.5
-
-router.post('/version-0-5/where', function (req, res) { 
-  res.redirect('lep-north-east')
-})
