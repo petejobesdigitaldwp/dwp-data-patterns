@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Examine a place | GOV.UK Prototype Kit
+  North East | Local enterprise partnership | Digital skills information service
 {% endblock %}
 
 {% block content %}
@@ -25,15 +25,25 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m section-border-top">
+            Find specific data
+          </h2>
 
+          <form method="post" class="form">
 
-    Some data / links to data will go here.
+              <div class="govuk-form-group govuk-!-margin-bottom-4">
+                  <div id="autocomplete"></div>
+                </div>
+      
+              <button class="govuk-button">Continue</button>
+      
+          </form>
 
     </div>
 
     <div class="govuk-grid-column-one-third">
 
-      <h3 class="govuk-heading-s">
+      <h3 class="govuk-heading-m section-border-top">
         Authorities in this area
       </h3>
 
@@ -143,5 +153,28 @@
     </div>
 
 </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script type="text/javascript">
+  
+  const dataitems = [
+  'GVA by industry sector',
+  'Digital skills demand by industry sector',
+  'Courses offered locally'
+]
+
+accessibleAutocomplete({
+  element: document.querySelector('#autocomplete'),
+  displayMenu: 'overlay',
+  showAllValues: true,
+  id: 'autocomplete', // To match it to the existing <label>.
+  source: dataitems
+})
+
+
+</script>
 
 {% endblock %}
