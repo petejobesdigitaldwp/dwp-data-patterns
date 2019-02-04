@@ -197,3 +197,7 @@ $govuk-global-styles: true;
 }
 
 .leaflet-control-attribution { display:none; }
+
+//// PANEL
+
+.govuk-panel a, .govuk-panel a:link, .govuk-panel a:hover, .govuk-panel a:visited { color:#FFF; display:inline-block; }
