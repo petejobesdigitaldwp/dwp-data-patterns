@@ -14,12 +14,22 @@ Newcastle upon Tyne | Local authority | Digital skills information service
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="index.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Newcastle upon Tyne local authority</li>
+    </ol>
+  </div>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Local authority</span>
-      <h1 class="govuk-heading-xl">
+      
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">
         Newcastle upon Tyne
       </h1>
+      <span class="govuk-caption-xl govuk-!-margin-bottom-8">Local authority</span>
      
     </div>
   </div>
@@ -126,9 +136,24 @@ Newcastle upon Tyne | Local authority | Digital skills information service
     </div>
 
     <div class="govuk-grid-column-one-third">
-        <p>Newcastle is part of the <a href="lep-north-east">North East</a> local enterprise partnership.</p>
-      <h3 class="govuk-heading-s">
-        Other authorities in the North East local enterprise partnership
+        <h3 class="govuk-heading-m section-border-top">
+            This area is part of
+          </h3>
+
+          <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#">England</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#">North East region</a>
+              </li>
+              <li>
+                  <a class="govuk-link" href="lep-north-east.html">North East local enterprise partnership</a>
+                </li>
+            </ul>
+
+      <h3 class="govuk-heading-m section-border-top">
+        Authorities in the North East local enterprise partnership
       </h3>
       <ul class="govuk-list">
         <li>
@@ -137,6 +162,7 @@ Newcastle upon Tyne | Local authority | Digital skills information service
         <li>
           <a class="govuk-link" href="#">Gateshead</a>
         </li>
+        <li>Newcastle upon Tyne</li>
         <li>
           <a class="govuk-link" href="#">North Tyneside</a>
         </li>
