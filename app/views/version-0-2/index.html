@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Digital skills information service
+{% endblock %}
+
+{% block content %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Digital skills information service
+      </h1>
+      <p class="govuk-body-l">
+        This service lets you find data about digital skills in a specific area.
+      </p>
+      <p>You can find data about:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>demographics</li>
+            <li>the need for digital skills</li>
+            <li>the supply of digital skills</li>
+          </ul>
+      <fieldset class="govuk-fieldset govuk-!-margin-top-8">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-fieldset__heading">
+            Sign in
+          </h2>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Email address
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="text">
+        </div>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password">
+            Password
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="password" name="password" type="password">
+        </div>
+      </fieldset>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "version-0-1/where",
+        classes: "govuk-button--start"
+    }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}
