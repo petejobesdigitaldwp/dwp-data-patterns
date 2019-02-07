@@ -11,3 +11,9 @@ router.post('/version-0-1/where', function (req, res) {
   res.redirect('/version-0-1/lep-north-east')
 })
 
+// Branching 0.2
+
+router.post('/version-0-2/where', function (req, res) { 
+  res.redirect('/version-0-2/lep-ne-skills-demand')
+})
+

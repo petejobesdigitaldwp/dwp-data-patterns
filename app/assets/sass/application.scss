@@ -41,7 +41,7 @@ $govuk-global-styles: true;
 }
 
 .headline-stat-box .figure {
-  font-size: 48px;
+  font-size: 36px;
   line-height: 1.0416666667;
   margin:8px 0;
   font-weight: bold;
@@ -82,19 +82,21 @@ $govuk-global-styles: true;
 
 .volumetrics-completion-selected {
   font-family: helvetica, arial, sans;
-  font-size:19px;
+  font-size:19px; 
 }
 
 .volumetrics-completion-selected .summary {
   color: #0b0c0c;
   display: block;
   font-weight: bold;
+  padding-bottom: 6px;
+  border-bottom:1px solid #bfc1c3;
 }
 
 .volumetrics-completion-selected strong {
-  font-size: 48px;
+  font-size: 42px;
   line-height: 1.0416666667;
-  margin-top:8px;
+  padding-top:6px;
   display:block;
   color: #097F96;
 }
