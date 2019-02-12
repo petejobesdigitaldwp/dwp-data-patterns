@@ -1,6 +1,4 @@
 
-$govuk-font-family: Helvetica, Arial, sans-serif;
-
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
@@ -46,7 +44,7 @@ $govuk-global-styles: true;
   margin:8px 0;
   font-weight: bold;
   display:block;
-  color: #097F96;
+  color: #000;
 }
 
 .headline-stat-box .date-range {
