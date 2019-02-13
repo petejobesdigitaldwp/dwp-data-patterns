@@ -33,21 +33,44 @@
       </h1>
       
     </div>
+  </div>
 
-    <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+    <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
         Find a specific skill
       </h2>
 
       <form class="form" action="lep-ne-gva.html">
 
-          <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <div class="govuk-form-group">
               <div id="autocomplete"></div>
           </div>
   
       </form>
     </div>
 
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Categories
+          </h2>
+    
+          <form class="form" action="lep-ne-gva.html">
+    
+              <div class="govuk-form-group">
+                  <div id="autocomplete-taxonomy"></div>
+              </div>
+      
+          </form>
+        </div>
+
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+      <div class="govuk-grid-column-one-half">
+          <div class="dynamic-filter-box"><span class="figure">893</span><p><strong>digital skills</strong> in the <strong>Graphic Design skills</strong> category</p></div>
+      </div>
   </div>
 
   <div class="govuk-grid-row">
@@ -211,6 +234,37 @@ accessibleAutocomplete({
   showAllValues: true,
   id: 'autocomplete', // To match it to the existing <label>.
   source: dataitems
+})
+
+
+  const dataitemstaxonomy = [
+  'Accounting and Finance skills',
+  'Administration and HR skills',
+  'Business Analysis skills',
+  'Catering and Hospitality skills',
+  'Construction skills',
+  'Data Security and Governance skills',
+  'Electronics skills',
+  'Engineering and Design skills',
+  'Graphic Design skills',
+  'IT Hardware and Networks skills',
+  'Law skills',
+  'Management and Strategy skills',
+  'Marketing skills',
+  'Nursing and Healthcare skills',
+  'Sales skills',
+  'Science and Pharmaceuticals skills',
+  'Teaching and Classroom skills',
+  'Utilities and Maintenance skills',
+  'Web and Software Development skills'
+]
+
+accessibleAutocomplete({
+  element: document.querySelector('#autocomplete-taxonomy'),
+  displayMenu: 'overlay',
+  showAllValues: true,
+  id: 'autocomplete-taxonomy', // To match it to the existing <label>.
+  source: dataitemstaxonomy
 })
 
 

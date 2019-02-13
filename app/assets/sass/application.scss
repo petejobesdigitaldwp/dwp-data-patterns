@@ -24,6 +24,32 @@ $govuk-global-styles: true;
 
 .govuk-phase-banner { margin-top:-30px; margin-bottom:30px; }
 
+
+/// DYNAMIC FILTER BOX
+
+.dynamic-filter-box {
+  font-family: helvetica, arial, sans;
+  font-size:19px;
+}
+
+.dynamic-filter-box .figure {
+  font-size: 42px;
+  line-height: 1.0416666667;
+  font-weight: bold;
+  display:inline-block;
+  color: #000;
+}
+
+.dynamic-filter-box p {
+  font-size: 19px;
+  line-height: 1.0416666667;
+  margin-left: 10px;
+  display:inline-block;
+  color: #000;
+}
+
+
+
 /// STAT BOX
 
 .headline-stat-box {
