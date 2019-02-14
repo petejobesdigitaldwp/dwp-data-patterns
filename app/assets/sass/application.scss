@@ -20,6 +20,19 @@ $govuk-global-styles: true;
 .two-col { column-count: 2; column-gap: 30px; } 
 .three-col { column-count: 3; column-gap: 30px; } 
 
+.autocomplete__input--show-all-values.autocomplete__input--focused + 
+.autocomplete__dropdown-arrow-down {
+  z-index: 1;
+}
+
+.autocomplete__dropdown-arrow-down {
+  z-index: 1;
+}
+
+.clearfix {
+  clear:both;
+}
+
 // Phase banner correction
 
 .govuk-phase-banner { margin-top:-30px; margin-bottom:30px; }
@@ -27,8 +40,21 @@ $govuk-global-styles: true;
 
 /// DYNAMIC FILTER BOX
 
+
+.sort-filter-table {
+  font-size: 16px;
+}
+
+.sort-filter-table .govuk-table__head .govuk-table__row .govuk-table__header {
+  border-top:2px solid #bfc1c3;
+  font-weight:normal !important; 
+}
+
+
+/// DYNAMIC FILTER BOX
+
 .dynamic-filter-box {
-  font-family: helvetica, arial, sans;
+  font-family: "nta";
   font-size:19px;
 }
 
@@ -36,16 +62,15 @@ $govuk-global-styles: true;
   font-size: 42px;
   line-height: 1.0416666667;
   font-weight: bold;
-  display:inline-block;
   color: #000;
+  float:left;
 }
 
-.dynamic-filter-box p {
+.dynamic-filter-box .filter-desc {
   font-size: 19px;
-  line-height: 1.0416666667;
   margin-left: 10px;
-  display:inline-block;
   color: #000;
+  float:left;
 }
 
 
@@ -53,7 +78,7 @@ $govuk-global-styles: true;
 /// STAT BOX
 
 .headline-stat-box {
-  font-family: helvetica, arial, sans;
+  font-family: "nta";
   font-size:19px;
 }
 
@@ -105,7 +130,7 @@ $govuk-global-styles: true;
 /// Volumetrics
 
 .volumetrics-completion-selected {
-  font-family: helvetica, arial, sans;
+  font-family: "nta";
   font-size:19px; 
 }
 
@@ -128,7 +153,7 @@ $govuk-global-styles: true;
 /*** AUTOCOMPLETE ***/
 
 .autocomplete__menu {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "nta";
 }
 
 .header-search .autocomplete__input {
@@ -227,3 +252,5 @@ $govuk-global-styles: true;
 //// PANEL
 
 .govuk-panel a, .govuk-panel a:link, .govuk-panel a:hover, .govuk-panel a:visited { color:#FFF; display:inline-block; }
+
+/// TABLES
