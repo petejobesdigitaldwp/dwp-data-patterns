@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  North East | Local enterprise partnership | Digital skills information service
+Digital skills | North East | Local enterprise partnership | Explore the digital skills market by area
 {% endblock %}
 
 {% block content %}
@@ -13,6 +13,8 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
+
+<link href="../../public/stylesheets/sortable-tables.css" media="screen" rel="stylesheet" type="text/css" />
 
 <div class="govuk-breadcrumbs">
         <ol class="govuk-breadcrumbs__list">
@@ -33,152 +35,201 @@
       </h1>
       
     </div>
+  </div>
 
-    <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+    <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
         Find a specific skill
       </h2>
 
       <form class="form" action="lep-ne-gva.html">
 
-          <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <div class="govuk-form-group">
               <div id="autocomplete"></div>
           </div>
   
       </form>
     </div>
 
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Categories
+          </h2>
+    
+          <form class="form" action="lep-ne-gva.html">
+    
+              <div class="govuk-form-group">
+                  <div id="autocomplete-taxonomy"></div>
+              </div>
+      
+          </form>
+        </div>
+
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+      <div class="govuk-grid-column-one-half">
+          <div class="dynamic-filter-box">
+            <span class="figure">893</span>
+            <span class="filter-desc"><strong>digital skills</strong> in the <strong>Graphic Design skills</strong> category</p></span>
+            <div class="clearfix"></div>
+          </div>
+          
+      </div>
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <table class="govuk-table  govuk-!-margin-bottom-5">
+        <table class="govuk-table sort-filter-table sortable govuk-!-margin-bottom-5">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="col">Digital Skill</th>
-              <th class="govuk-table__header" scope="col">Demand</th>
-              <th class="govuk-table__header" scope="col">Growth</th>
-              <th class="govuk-table__header" scope="col">Salary range</th>
+              <th class="govuk-table__header sortable-column" scope="col">Category</th>
+              <th class="govuk-table__header sortable-column" data-sortby="text" scope="col"><span class="th-content">Demand <i class="arrow"></i></span></th>
+              <th class="govuk-table__header sortable-column" data-sortby="text" scope="col"><span class="th-content">Growth <i class="arrow"></i></span></th>
+              <th class="govuk-table__header sortable-column" data-sortby="money" scope="col"><span class="th-content">Salary range <i class="arrow"></i></span></th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="row"><a href="lep-ne-digital-skills-javascript.html">Javascript</a></th>
+              <td class="govuk-table__cell">Web and Software Development skills</td>
               <td class="govuk-table__cell">Very high</td>
               <td class="govuk-table__cell">Steady growth</td>
               <td class="govuk-table__cell">£30,000 - £50,000</td>
             </tr>
             <tr class="govuk-table__row">
                 <th class="govuk-table__header" scope="row"><a href="#">React</a></th>
+                <td class="govuk-table__cell">Web and Software Development skills</td>
                 <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
             </tr>
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="row"><a href="#">User research</a></th>
+              <td class="govuk-table__cell">Business Analysis skills</td>
               <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Rapid growth</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
             </tr>
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="row"><a href="#">Cobol</a></th>
+              <td class="govuk-table__cell">IT Hardware and Networks skills</td>
               <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
             </tr>
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="row"><a href="#">Digital security</a></th>
+              <td class="govuk-table__cell">Data Security and Governance skills</td>
               <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
             </tr>
             <tr class="govuk-table__row">
                     <th class="govuk-table__header" scope="row"><a href="#">Business analysis</a></th>
+                    <td class="govuk-table__cell">Business Analysis skills</td>
                     <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <th class="govuk-table__header" scope="row"><a href="#">Interaction design</a></th>
+                    <td class="govuk-table__cell">Web and Software Development skills</td>
                     <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Rapid growth</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                   </tr>
                   <tr class="govuk-table__row">
                         <th class="govuk-table__header" scope="row"><a href="#">CAD operator</a></th>
+                        <td class="govuk-table__cell">Engineering and Design skills</td>
                         <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Steady decline</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                       </tr>
                       <tr class="govuk-table__row">
                         <th class="govuk-table__header" scope="row"><a href="#">Programming</a></th>
+                        <td class="govuk-table__cell">Web and Software Development skills</td>
                         <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                       </tr>
                       <tr class="govuk-table__row">
                             <th class="govuk-table__header" scope="row"><a href="#">Quality assurance</a></th>
+                            <td class="govuk-table__cell">Engineering and Design skills</td>
                             <td class="govuk-table__cell">Very high</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                           </tr>
                           <tr class="govuk-table__row">
                             <th class="govuk-table__header" scope="row"><a href="#">Data engineering</a></th>
+                            <td class="govuk-table__cell">Engineering and Design skills</td>
                             <td class="govuk-table__cell">High</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                           </tr>
                           <tr class="govuk-table__row">
                             <th class="govuk-table__header" scope="row"><a href="#">Photo editing</a></th>
+                            <td class="govuk-table__cell">Graphic Design skills</td>
                             <td class="govuk-table__cell">High</td>
                 <td class="govuk-table__cell">Steady growth</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                           </tr>
                           <tr class="govuk-table__row">
                                 <th class="govuk-table__header" scope="row"><a href="#">Music production</a></th>
+                                <td class="govuk-table__cell">Electronics skills</td>
                                 <td class="govuk-table__cell">High</td>
                                 <td class="govuk-table__cell">Steady growth</td>
                                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                               </tr>
                               <tr class="govuk-table__row">
                                 <th class="govuk-table__header" scope="row"><a href="#">Marketing</a></th>
+                                <td class="govuk-table__cell">Engineering and Design skills</td>
                                 <td class="govuk-table__cell">High</td>
                 <td class="govuk-table__cell">Stable</td>
                 <td class="govuk-table__cell">£30,000 - £50,000</td>
                               </tr>
                               <tr class="govuk-table__row">
                                   <th class="govuk-table__header" scope="row"><a href="#">Programming</a></th>
+                                  <td class="govuk-table__cell">Web and Software Development skills</td>
                                   <td class="govuk-table__cell">High</td>
                           <td class="govuk-table__cell">Stable</td>
                           <td class="govuk-table__cell">£30,000 - £50,000</td>
                                 </tr>
                                 <tr class="govuk-table__row">
                                       <th class="govuk-table__header" scope="row"><a href="#">Quality assurance</a></th>
+                                      <td class="govuk-table__cell">Web and Software Development skills</td>
                                       <td class="govuk-table__cell">High</td>
                           <td class="govuk-table__cell">Stable</td>
                           <td class="govuk-table__cell">£30,000 - £50,000</td>
                                     </tr>
                                     <tr class="govuk-table__row">
                                       <th class="govuk-table__header" scope="row"><a href="#">Data engineering</a></th>
+                                      <td class="govuk-table__cell">Engineering and Design skills</td>
                                       <td class="govuk-table__cell">High</td>
                           <td class="govuk-table__cell">Stable</td>
                           <td class="govuk-table__cell">£30,000 - £50,000</td>
                                     </tr>
                                     <tr class="govuk-table__row">
                                       <th class="govuk-table__header" scope="row"><a href="#">Photo editing</a></th>
+                                      <td class="govuk-table__cell">Graphic Design skills</td>
                                       <td class="govuk-table__cell">Average</td>
                           <td class="govuk-table__cell">Steady growth</td>
                           <td class="govuk-table__cell">£30,000 - £50,000</td>
                                     </tr>
                                     <tr class="govuk-table__row">
                                           <th class="govuk-table__header" scope="row"><a href="#">Music production</a></th>
+                                          <td class="govuk-table__cell">Engineering and Design skills</td>
                                           <td class="govuk-table__cell">Average</td>
                                           <td class="govuk-table__cell">Stable</td>
                                           <td class="govuk-table__cell">£30,000 - £50,000</td>
                                         </tr>
                                         <tr class="govuk-table__row">
                                           <th class="govuk-table__header" scope="row"><a href="#">Marketing</a></th>
+                                          <td class="govuk-table__cell">Business Analysis skills</td>
                                           <td class="govuk-table__cell">Average</td>
                           <td class="govuk-table__cell">Stable</td>
                           <td class="govuk-table__cell">£30,000 - £50,000</td>
@@ -208,12 +259,46 @@
 accessibleAutocomplete({
   element: document.querySelector('#autocomplete'),
   displayMenu: 'overlay',
-  showAllValues: true,
   id: 'autocomplete', // To match it to the existing <label>.
   source: dataitems
 })
 
 
+  const dataitemstaxonomy = [
+  'Accounting and Finance skills',
+  'Administration and HR skills',
+  'Business Analysis skills',
+  'Catering and Hospitality skills',
+  'Construction skills',
+  'Data Security and Governance skills',
+  'Electronics skills',
+  'Engineering and Design skills',
+  'Graphic Design skills',
+  'IT Hardware and Networks skills',
+  'Law skills',
+  'Management and Strategy skills',
+  'Marketing skills',
+  'Nursing and Healthcare skills',
+  'Sales skills',
+  'Science and Pharmaceuticals skills',
+  'Teaching and Classroom skills',
+  'Utilities and Maintenance skills',
+  'Web and Software Development skills'
+]
+
+accessibleAutocomplete({
+  element: document.querySelector('#autocomplete-taxonomy'),
+  displayMenu: 'overlay',
+  showAllValues: true,
+  id: 'autocomplete-taxonomy', // To match it to the existing <label>.
+  source: dataitemstaxonomy
+})
+
+
 </script>
+
+
+<script type="text/javascript" src="../../public/javascripts/sortable-tables.js"></script>
+
 
 {% endblock %}
