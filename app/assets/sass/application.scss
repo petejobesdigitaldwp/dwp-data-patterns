@@ -254,3 +254,26 @@ $govuk-global-styles: true;
 .govuk-panel a, .govuk-panel a:link, .govuk-panel a:hover, .govuk-panel a:visited { color:#FFF; display:inline-block; }
 
 /// TABLES
+
+.sortable-column
+
+.sortable-column .arrow-up {
+  width: 0; 
+  height: 0; 
+  margin-top:7px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #005ea5;
+  float:right;
+}
+
+
+.sortable-column .arrow-down {
+  width: 0; 
+  height: 0; 
+  margin-top:7px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #005ea5;
+  float:right;
+}
