@@ -62,17 +62,49 @@ $govuk-global-styles: true;
   font-size: 42px;
   line-height: 1.0416666667;
   font-weight: bold;
+  margin-right:10px;
   color: #000;
+  display:inline-block;
   float:left;
 }
 
 .dynamic-filter-box .filter-desc {
-  font-size: 19px;
+  font-size: 16px;
   margin-left: 10px;
   color: #000;
-  float:left;
 }
 
+@media (min-width: 641px) {
+.btn-remove {
+  font-size: 16px;
+  line-height: 1.25;
+}
+}
+
+.btn-remove {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "nta",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  font-weight: 400;
+  text-transform: none;
+  color: #6f777b;
+  display: inline-block;
+  height: 1em;
+  width: 0.5em;
+}
+
+.btn-inline {
+  margin-left: 3px;
+    margin-right: 7px;
+    vertical-align: middle;
+}
 
 
 /// STAT BOX
@@ -255,25 +287,15 @@ $govuk-global-styles: true;
 
 /// TABLES
 
-.sortable-column
-
-.sortable-column .arrow-up {
-  width: 0; 
-  height: 0; 
-  margin-top:7px;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #005ea5;
-  float:right;
+.th-sort-link {
+  color:  #005ea5;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-
-.sortable-column .arrow-down {
-  width: 0; 
-  height: 0; 
-  margin-top:7px;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid #005ea5;
-  float:right;
+.th-sort-link:hover {
+  color: #2b8cc4;
+  text-decoration: underline;
+  cursor: pointer;
 }
+
