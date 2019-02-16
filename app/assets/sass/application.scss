@@ -46,7 +46,6 @@ $govuk-global-styles: true;
 }
 
 .sort-filter-table .govuk-table__head .govuk-table__row .govuk-table__header {
-  border-top:2px solid #bfc1c3;
   font-weight:normal !important; 
 }
 
@@ -299,3 +298,14 @@ $govuk-global-styles: true;
   cursor: pointer;
 }
 
+.show-with-responsive-table { display: none; }
+.responsive-table .govuk-table__header, .responsive-table .govuk-table__cell { border:0; }
+.responsive-table .govuk-table__head { border-top:2px solid #bfc1c3; border-bottom:2px solid #bfc1c3; }
+.responsive-table .govuk-table__row { border-bottom:1px solid #bfc1c3; }
+
+@media screen and (max-width: 641px) {
+  .govuk-table__row .show-with-responsive-table { display: inline-block; margin-right:7px; font-weight: bold; }
+  .responsive-table .govuk-table__row { padding-top:8px; padding-bottom:8px; display:block; }
+  .responsive-table .govuk-table__header, .responsive-table .govuk-table__cell { width:100%; display:block; }
+  .responsive-table .govuk-table__header, .responsive-table .govuk-table__cell { padding: 3px 20px 3px 0px; }
+}
