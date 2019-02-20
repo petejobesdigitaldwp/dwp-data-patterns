@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Skills | North East | Local enterprise partnership | Explore the digital skills market by area
+Roles | North East | Local enterprise partnership | Explore the digital skills market by area
 {% endblock %}
 
 {% block content %}
@@ -55,16 +55,16 @@ Skills | North East | Local enterprise partnership | Explore the digital skills 
     
           <form class="form" action="lep-ne-gva.html">
     
-              <div class="govuk-form-group">
-                  <label class="govuk-label" for="sort">
-                      <strong>Type of role</strong>
-                    </label>
-                    <select class="govuk-select" id="sort" name="sort">
-                      <option value="all" selected>All roles</option>
-                      <option value="digital">Roles requiring digital skills</option>
-                      <option value="non-digital">Roles not requiring digital skills</option>
-                    </select>
-              </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                  <strong>Requirements</strong>
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="all" selected>All</option>
+                  <option value="digital">Roles requiring digital skills</option>
+                  <option value="non-digital">Roles requiring no digital skills</option>
+                </select>
+            </div>
       
           </form>
         </div>
@@ -122,7 +122,7 @@ Skills | North East | Local enterprise partnership | Explore the digital skills 
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="col"><span class="th-sort-link">Role</span></th>
-              <th class="govuk-table__header" scope="col"><span class="th-sort-link">Type</span></th>
+              <th class="govuk-table__header" scope="col"><span class="th-sort-link">Requires</span></th>
               <th class="govuk-table__header" scope="col"><span class="th-sort-link">Category</span></th>
               <th class="govuk-table__header" scope="col"><span class="th-sort-link">Demand</span></th>
               <th class="govuk-table__header" scope="col"><span class="th-sort-link">Growth</span></th>

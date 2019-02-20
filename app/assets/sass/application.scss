@@ -33,6 +33,8 @@ $govuk-global-styles: true;
   clear:both;
 }
 
+.inline-block { display: inline-block; }
+
 // Phase banner correction
 
 .govuk-phase-banner { margin-top:-30px; margin-bottom:30px; }
@@ -308,3 +310,8 @@ $govuk-global-styles: true;
   .responsive-table .govuk-table__header, .responsive-table .govuk-table__cell { width:100%; display:block; }
   .responsive-table .govuk-table__header, .responsive-table .govuk-table__cell { padding: 3px 20px 3px 0px; }
 }
+
+/*** CHART CONTROL PANEL  ***/
+
+.chart-panel { background-color:  #f8f8f8; color:#FFF; padding:15px 0px; border-bottom: 3px solid #005ea5; }
+

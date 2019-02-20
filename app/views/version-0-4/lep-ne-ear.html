@@ -1,0 +1,126 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Economic activity rate | North East | Local enterprise partnership | Explore the digital skills market by area
+{% endblock %}
+
+{% block content %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="index.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="lep-ne.html">North East</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Economic activity rate</li>
+    </ol>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+          Economic activity rate in the North East
+      </h1>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        
+    </div>
+  </div>
+
+  <div class="govuk-grid-row chart-panel govuk-!-margin-bottom-8">
+
+          <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group  govuk-!-margin-bottom-1">
+                  <label class="govuk-label" for="sectors">
+                      <strong>Economic activity</strong>
+                    </label>
+                    <select class="govuk-select" id="sectors" name="sectors">
+                      <option value="all" selected>All</option>
+                      <option>Economically active</option>
+                      <option>Economically inactive</option>
+                    </select>
+              </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            <div class="govuk-form-group  govuk-!-margin-bottom-1">
+                <label class="govuk-label" for="sectors">
+                    <strong>Age</strong>
+                  </label>
+                  <select class="govuk-select" id="sectors" name="sectors">
+                    <option value="all" selected>All ages</option>
+                    <option>0 - 15 years</option>
+                    <option>16 - 24 years</option>
+                    <option>25 - 34 years</option>
+                    <option>35 - 49 years</option>
+                    <option>50+ years</option>
+                  </select>
+            </div>
+      </div>
+  
+    </div>
+
+
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="lep-ne-gva-over-time.html">Economic activity rate in the North East is lower than the national average and is growing slowly</a></h2>
+        </div>
+    </div>
+ 
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+      <div class="govuk-grid-column-three-quarters">
+          <img src="../../public/images/lines-gva.png" class="full-width-image govuk-!-margin-bottom-3"/>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+          <div class="volumetrics-completion-selected">
+              <span class="summary">August 2018</span>
+              <strong>£4,931m</strong>
+              <p class="govuk-body-s">National average: £6,342m</p>
+            </div>
+      </div>
+  </div>
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          <div class="section-border-top">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="#">Economic activity rate across the North East is highest in Newcastle upon Tyne</a></h2>
+            <p class="govuk-body-s">Percentage of vacancies requiring Javascript in each local authority</p>
+          </div>
+        </div>
+    </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+      <div class="govuk-grid-column-three-quarters">
+          <img src="../../public/images/ne-lep-barcode.png" class="full-width-image govuk-!-margin-bottom-3"/>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+          <div class="volumetrics-completion-selected">
+              <span class="summary">Newcastle upon Tyne</span>
+              <strong>1.6%</strong>
+            </div>
+      </div>
+  </div>
+  
+
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+
+{% endblock %}
