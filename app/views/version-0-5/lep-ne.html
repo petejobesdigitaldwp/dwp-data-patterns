@@ -128,20 +128,22 @@
       </div>
       <div class="govuk-grid-row  govuk-!-margin-bottom-2">
           <div class="govuk-grid-column-full">
-            <h2 class="govuk-heading-m section-border-top">Statistical Information</h2>
-            <ul class="govuk-list govuk-list--bullet">
-              <li><a href="lep-ne-gva.html">Gross value added (balanced)</a></li>
-              <li><a href="lep-ne-ear.html">Economic activity rate</a></li>
-              <li><a href="lep-ne-acc.html">Alternative claimant count</a></li>
-              <li><a href="lep-ne-er.html">Employment rate</a></li>
-            </ul>
-        </div>       
+            <h2 class="govuk-heading-m section-border-top">Demographics</h2>
+            <p><a href="lep-ne-gva.html">Gross value added (balanced)</a>, <a href="lep-ne-ear.html">Economic activity rate</a>, <a href="lep-ne-acc.html">Alternative claimant count</a>, <a href="lep-ne-er.html">Employment rate</a></p>
+            </div>
+       
       </div>
-  </div>
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-m section-border-top">
-          This area is part of
+
+</div>
+
+
+
+<div class="govuk-grid-column-one-third">
+
+    <h3 class="govuk-heading-m section-border-top">
+        This area is part of
       </h3>
+
       <ul class="govuk-list">
           <li>
             <a class="govuk-link" href="#">England</a>
@@ -149,36 +151,116 @@
           <li>
             <a class="govuk-link" href="#">North East region</a>
           </li>
-      </ul>
-      <h3 class="govuk-heading-m section-border-top">
-        Authorities in this area
-      </h3>
+        </ul>
+
+  <h3 class="govuk-heading-m section-border-top">
+    Authorities in this area
+  </h3>
+
+  <!-- <div id="map"></div>
+
+    <script type="text/javascript" src="../../public/javascripts/leaflet/leaflet.js"></script>
+    <script type="text/javascript" src="../../public/javascripts/NE_LEP_LA_boundaries_WGS84.js"></script>
+    <script type="text/javascript">
+      var map = L.map('map', {
+        //center: [55.10, -2.01],
+        //zoom: 9,
+        zoomControl:false,
+        scrollWheelZoom:false,
+        doubleClickZoom:false,
+        touchZoom:false,
+        dragging:false
+      });
+
+      var geoJsonData = L.geoJSON(data, {
+        onEachFeature: onEachFeature,
+        style:style,
+        smoothFactor:0
+      });
+
+      map.fitBounds(geoJsonData.getBounds());
+
+      geoJsonData.addTo(map);
+
+      function style(feature) {
+          return {
+              fillColor: '#cccccc',
+              weight: 1,
+              opacity: 1,
+              color: '#333',
+              //dashArray: '3',
+              fillOpacity: 1.0
+          };
+      }
+
+      function highlightFeature(e) {
+          var layer = e.target;
+
+          layer.setStyle({
+              weight: 1,
+              color: '#666',
+              dashArray: '',
+              fillOpacity: 0.7
+          });
+
+          if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+              layer.bringToFront();
+          }
+      }
+
+      function resetHighlight(e) {
+        geoJsonData.resetStyle(e.target);
+      }
+
+      function featureSelect(e) {
+        alert("This would link to: " + e.target.feature.properties.lad16nm);
+        //window.location.href = 'https://skillsrecommendation.dwpdata.info';
+      }
 
 
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-link" href="#">Durham</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Gateshead</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="la-newcastle">Newcastle upon Tyne</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">North Tyneside</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Northumberland</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">South Tyneside</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Sunderland</a>
-        </li>
-      </ul>
-    </div>
+      function onEachFeature(feature, layer) {
+          layer.on({
+              mouseover: highlightFeature,
+              mouseout: resetHighlight,
+              click: featureSelect
+          });
+      }
+
+      
+      //, {
+      //  style: function (feature) {
+      //    return {color: feature.properties.color};
+      //  }
+      //}).bindPopup(function (layer) {
+      //  return layer.feature.properties.description;
+      </script>
+
+    -->
+
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="#">Durham</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Gateshead</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="la-newcastle">Newcastle upon Tyne</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">North Tyneside</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Northumberland</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">South Tyneside</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Sunderland</a>
+    </li>
+  </ul>
+</div>
 
 </div>
 
@@ -187,22 +269,22 @@
 {% block pageScripts %}
 
 <script type="text/javascript">
-  
-  const dataitems = [
-    'Alternative claimant count',
-  'Economic activity rate',
-  'Employment rate',
-  'Gross value added (balanced)',
-  'Roles in demand',
-  'Skills in demand'
+
+const dataitems = [
+'Alternative claimant count',
+'Economic activity rate',
+'Employment rate',
+'Gross value added (balanced)',
+'Roles in demand',
+'Skills in demand'
 ]
 
 accessibleAutocomplete({
-  element: document.querySelector('#autocomplete'),
-  displayMenu: 'overlay',
-  showAllValues: true,
-  id: 'autocomplete', // To match it to the existing <label>.
-  source: dataitems
+element: document.querySelector('#autocomplete'),
+displayMenu: 'overlay',
+showAllValues: true,
+id: 'autocomplete', // To match it to the existing <label>.
+source: dataitems
 })
 
 
