@@ -133,6 +133,15 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
   color:  #097F96;
 }
 
+.headline-stat-box .no-data {
+  font-size: 36px;
+  line-height: 1.0416666667;
+  margin:8px 0;
+  font-weight: normal;
+  display:block;
+  color:  #bfc1c3;
+}
+
 .headline-stat-box .date-range {
   display: block;
 }
@@ -183,6 +192,47 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
   padding-top:6px;
   display:block;
   color: #097F96;
+}
+
+/// Chart annotation
+
+.chart-annotation {
+  font-family: "nta";
+  font-size:19px; 
+}
+
+.chart-annotation .summary {
+  color: #0b0c0c;
+  display: block;
+  font-weight: bold;
+  padding-bottom: 6px;
+  border-bottom:1px solid #bfc1c3;
+}
+
+.chart-annotation .label {
+  margin-top:15px;
+  padding-top:6px; 
+  margin-bottom:6px;
+  display:block;
+}
+
+.primary-line {
+  border-top: 3px solid #00A398;
+}
+
+.average-line {
+  border-top:3px solid #AAAAAA;
+}
+
+.extra-annotation {
+  border-top:3px solid #6C777C;
+}
+
+.extra-annotation .figure { font-weight: bold; float:right; }
+
+.chart-annotation strong {
+  font-size:23px; 
+  display:block;
 }
 
 /*** AUTOCOMPLETE ***/
