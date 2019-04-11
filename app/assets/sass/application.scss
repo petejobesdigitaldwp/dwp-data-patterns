@@ -183,8 +183,6 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
   color: #0b0c0c;
   display: block;
   font-weight: bold;
-  padding-bottom: 6px;
-  border-bottom:1px solid #bfc1c3;
 }
 
 .volumetrics-completion-selected strong {
@@ -206,8 +204,6 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
   color: #0b0c0c;
   display: block;
   font-weight: bold;
-  padding-bottom: 6px;
-  border-bottom:1px solid #bfc1c3;
 }
 
 .chart-annotation .label {
@@ -222,7 +218,7 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
 }
 
 .average-line {
-  border-top:3px solid #AAAAAA;
+  border-top:3px dashed #AAAAAA;
 }
 
 .extra-annotation {
