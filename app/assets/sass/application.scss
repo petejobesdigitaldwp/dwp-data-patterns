@@ -2,10 +2,11 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
-// Import GOV.UK Frontend
-@import "node_modules/govuk-frontend/all";
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
 
 // Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
 @import "patterns/check-your-answers";
 @import "patterns/task-list";
 @import "patterns/related-items";
@@ -33,6 +34,8 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
 .clearfix {
   clear:both;
 }
+
+.govuk-select { width:100%; }
 
 .last-update { color:  $govuk-secondary-text-colour; }
 
