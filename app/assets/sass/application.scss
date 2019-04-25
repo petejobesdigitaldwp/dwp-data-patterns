@@ -19,8 +19,10 @@ $govuk-global-styles: true;
 .full-width-image { width:100%; }
 hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
 .section-border-top { border-top: 1px solid #bfc1c3; padding-top:20px; }
+.section-border-top-nav { border-top: 5px solid #005ea5; padding-top:20px; }
 .two-col { column-count: 2; column-gap: 30px; } 
 .three-col { column-count: 3; column-gap: 30px; } 
+.percentage { font-size: 70%; }
 
 .autocomplete__input--show-all-values.autocomplete__input--focused + 
 .autocomplete__dropdown-arrow-down {
