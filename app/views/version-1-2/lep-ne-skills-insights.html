@@ -98,27 +98,17 @@
 
 </div>
 
+</div>
+
+
+
+
+{% include "includes/feedback.html" %}
+
 {% endblock %}
 
 {% block pageScripts %}
 
-<script type="text/javascript">
-  
-  const dataitems = [
-  'GVA by industry sector',
-  'Digital skills demand by industry sector',
-  'Courses offered locally'
-]
 
-accessibleAutocomplete({
-  element: document.querySelector('#autocomplete'),
-  displayMenu: 'overlay',
-  showAllValues: true,
-  id: 'autocomplete', // To match it to the existing <label>.
-  source: dataitems
-})
-
-
-</script>
 
 {% endblock %}

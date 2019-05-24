@@ -401,7 +401,7 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
   height:250px;
 }
 
-.leaflet-control-attribution { display:none; }
+.leaflet-control-attribution, .visually-hidden { display:none; }
 
 //// PANEL
 
@@ -452,3 +452,27 @@ hr { border: 0; border-top:1px solid #bfc1c3; margin-bottom:20px; }
   margin-right:8px;
   float:none;
 } 
+
+/*** FEEDBACK ***/
+
+.text-align-right { text-align: right; }
+
+.footer-feedback + .govuk-footer {
+  border-top:10px solid #005ea5;
+}
+
+.footer-feedback-actions {
+  background-color: #005ea5 !important; color:#FFF;
+}
+
+.footer-feedback-thanks {
+  background-color: #005ea5 !important; color:#FFF;
+}
+
+#footer-feedback-content, #footer-feedback-thanks { display:none; }
+
+.footer-feedback-actions p, .footer-feedback-thanks p { color:#FFF; }
+
+.footer-feedback-actions a, .footer-feedback-actions a:visited, .footer-feedback-actions a:hover { color:#FFF; }
+
+.footer-feedback-expand { border-top:10px solid #005ea5; padding-top:15px; }

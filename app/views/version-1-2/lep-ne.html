@@ -331,30 +331,15 @@
 
 </div>
 
+</div>
+
+
+{% include "includes/feedback.html" %}
+
 {% endblock %}
 
 {% block pageScripts %}
 
-<script type="text/javascript">
 
-const dataitems = [
-'Alternative claimant count',
-'Economic activity rate',
-'Employment rate',
-'Gross value added (balanced)',
-'Roles in demand',
-'Skills in demand'
-]
-
-accessibleAutocomplete({
-element: document.querySelector('#autocomplete'),
-displayMenu: 'overlay',
-showAllValues: true,
-id: 'autocomplete', // To match it to the existing <label>.
-source: dataitems
-})
-
-
-</script>
 
 {% endblock %}
