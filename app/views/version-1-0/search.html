@@ -2,44 +2,81 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Where would you like to find out about? | Explore the digital skills market by area
+  Manhattan
 {% endblock %}
 
 {% block content %}
 
 {{ govukPhaseBanner({
   tag: {
-    text: "alpha"
+    text: "prototype"
   },
-  html: 'This is a new service – your feedback will help us to improve it.'
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      Home
-    </li>
-  </ol>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item" aria-current="page">Home</li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+                <p class="govuk-body  govuk-!-font-size-16 govuk-!-margin-top-2" align="right">Currently logged in as</br><strong>Pete Jobes</strong> - <a href='/logout'>Log out</a></p>
+     </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-top-5">
   <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" class="form" action="/version-1-2/lep-ne">
-
-        <fieldset class="govuk-fieldset" id="where_fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-            Where would you like to find out about?
-            </h1>
-          </legend> 
-          <span class="govuk-hint">You can search for a region, a local enterprise partnership or a local authority district.</span>
-          <div class="govuk-form-group">
-            <div id="autocomplete"></div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            What would you like to find out about?
+          </h1>
+        </legend>
+        <span id="how-contacted-conditional-hint" class="govuk-hint">
+          Select an option below to start learning about local employers.
+        </span>
+        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+              View the employers in a local authority district
+            </label> </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+            <div class="govuk-form-group">
+              <label class="govuk-hint govuk-!-margin-top-4" for="autocomplete">
+                You can search for any 2015 local authority district in Great Britain.
+              </label>
+              <div class="govuk-form-group">
+                <div id="autocomplete" name="autocomplete"></div>
+                <a href="la-newcastle" role="button" draggable="false" class="govuk-button govuk-!-margin-top-4">Submit</a>
+              </div>
+            </div>
           </div>
-        </fieldset>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+              View facts about an employer and the distribution of its employees
+            </label> </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+            <div class="govuk-form-group">
+              <label class="govuk-hint govuk-!-margin-top-4" for="autocomplete-emp">
+                These may be names of PAYE parent companies, trimmed to 32 characters.
+              </label>
+              <div class="govuk-form-group">
+                <div id="autocomplete-emp" name="autocomplete-emp"></div>
+                <a href="emp-broadstreet-great-wilson" role="button" draggable="false" class="govuk-button govuk-!-margin-top-4">Submit</a>
+              </div>
+            </div>
+          </div>
 
-        <button class="govuk-button">Continue</button>
+        </div>
+      </fieldset>
+    </div>
 
     </form>
     
@@ -48,8 +85,6 @@
 </div>
 
 </div>
-
-{% include "includes/feedback.html" %}
 
 {% endblock %}
 
@@ -60,44 +95,6 @@
     /*global accessibleAutocomplete*/
     function customResults (query, matchedResults) {
       var results = [
-      { areatype: 'Local enterprise partnership', name: 'Black Country' },
-      { areatype: 'Local enterprise partnership', name: 'Buckinghamshire Thames Valley' },
-      { areatype: 'Local enterprise partnership', name: 'Cheshire and Warrington' },
-      { areatype: 'Local enterprise partnership', name: 'Coast to Capital' },
-      { areatype: 'Local enterprise partnership', name: 'Cornwall and Isles of Scilly' },
-      { areatype: 'Local enterprise partnership', name: 'Coventry and Warwickshire' },
-      { areatype: 'Local enterprise partnership', name: 'Cumbria' },
-      { areatype: 'Local enterprise partnership', name: 'D2N2 (Derby, Derbyshire, Nottingham and Nottinghamshire)' },
-      { areatype: 'Local enterprise partnership', name: 'Dorset' },
-      { areatype: 'Local enterprise partnership', name: 'Enterprise M3' },
-      { areatype: 'Local enterprise partnership', name: 'GFirst LEP' },
-      { areatype: 'Local enterprise partnership', name: 'Greater Birmingham and Solihull' },
-      { areatype: 'Local enterprise partnership', name: 'Greater Cambridge and Greater Peterborough' },
-      { areatype: 'Local enterprise partnership', name: 'Greater Lincolnshire' },
-      { areatype: 'Local enterprise partnership', name: 'Greater Manchester' },
-      { areatype: 'Local enterprise partnership', name: 'Heart of the South West' },
-      { areatype: 'Local enterprise partnership', name: 'Hertfordshire' },
-      { areatype: 'Local enterprise partnership', name: 'Humber' },
-      { areatype: 'Local enterprise partnership', name: 'Lancashire' },
-      { areatype: 'Local enterprise partnership', name: 'Leeds City Region' },
-      { areatype: 'Local enterprise partnership', name: 'Leicester and Leicestershire' },
-      { areatype: 'Local enterprise partnership', name: 'Liverpool City Region' },
-      { areatype: 'Local enterprise partnership', name: 'London Enterprise Panel' },
-      { areatype: 'Local enterprise partnership', name: 'New Anglia' },
-      { areatype: 'Local enterprise partnership', name: 'North East' },
-      { areatype: 'Local enterprise partnership', name: 'Oxfordshire' },
-      { areatype: 'Local enterprise partnership', name: 'Sheffield City Region' },
-      { areatype: 'Local enterprise partnership', name: 'Solent' },
-      { areatype: 'Local enterprise partnership', name: 'South East' },
-      { areatype: 'Local enterprise partnership', name: 'South East Midlands' },
-      { areatype: 'Local enterprise partnership', name: 'Stoke-on-Trent and Staffordshire' },
-      { areatype: 'Local enterprise partnership', name: 'Swindon and Wiltshire' },
-      { areatype: 'Local enterprise partnership', name: 'Tees Valley' },
-      { areatype: 'Local enterprise partnership', name: 'Thames Valley Berkshire' },
-      { areatype: 'Local enterprise partnership', name: 'The Marches' },
-      { areatype: 'Local enterprise partnership', name: 'West of England' },
-      { areatype: 'Local enterprise partnership', name: 'Worcestershire' },
-      { areatype: 'Local enterprise partnership', name: 'York, North Yorkshire and East Riding' },
       
       { areatype: 'Local authority', name: 'Aberdeen City' },
       { areatype: 'Local authority', name: 'Aberdeenshire' },
@@ -487,19 +484,41 @@
       matchedResults(checkMatch)
     }
 
+  function customResultsEmp (query, matchedResults) {
+      var results = [
+      
+      { areatype: 'Local authority', name: 'BROADSTREET GREAT WILSON (EUROPE)' },
+      { areatype: 'Local authority', name: 'WHITBREAD GRP PLC INCL WHITBREAD' },
+      { areatype: 'Local authority', name: 'BRITISH UNITED PROVIDENT' },
+      { areatype: 'Local authority', name: 'GREENE KING PLC INCL BREWING' },
+      { areatype: 'Local authority', name: 'BRITISH AIRWAYS PLC INCL BRITISH' },
+      { areatype: 'Local authority', name: 'BROOK STREET (UK) LTD INCL BAFIN' },
+      { areatype: 'Local authority', name: 'ICELAND FOODS LTD INCL ALL GRP MBR' },
+      { areatype: 'Local authority', name: 'SERCO GRP PLC INCL ALL VAT GRP MBR' },
+      { areatype: 'Local authority', name: 'ABERTAWE BRO MORGANNWG UNIVERSITY' },
+      { areatype: 'Local authority', name: 'BRITISH BUS PLC INCL ALL VAT GROUP' }
+      
+      ]
+      const checkMatch = results.filter(result => 
+       result.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 // || result.areatype.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      )
+      matchedResults(checkMatch)
+    }
+
   function inputValueTemplate (result) {
     return result && result.name
   }
 
   function suggestionTemplate (result) {
-    return result && '<span class=\'areaname\'>' + result.name + '</span>' +
-      '<span class=\'areatype\'>' + result.areatype + '</span>'
+    return result && '<span class=\'areaname\'>' + result.name + '</span>'
   }
       
   var element = document.querySelector('#autocomplete');
   accessibleAutocomplete({
     element: element,
     id: 'autocomplete-class',
+    placeholder: 'Start typing a place name...',
+    showAllValues: 'true',
     source: customResults,
     templates: {
         inputValue: inputValueTemplate,
@@ -507,6 +526,18 @@
     }
   });
 
+  var element = document.querySelector('#autocomplete-emp');
+  accessibleAutocomplete({
+    element: element,
+    id: 'autocomplete-class',
+    placeholder: 'Start typing an employer name...',
+    showAllValues: 'true',
+    source: customResultsEmp,
+    templates: {
+        inputValue: inputValueTemplate,
+        suggestion: suggestionTemplate
+    }
+  });
 
 </script>
 
