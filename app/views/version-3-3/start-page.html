@@ -1,0 +1,74 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find data on employers
+{% endblock %}
+
+{% block content %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-grid-row govuk-!-margin-top-7">
+
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+
+        Find data on employers
+
+      </h1>
+
+      <p class="govuk-body-l">
+
+          This service lets you view information about employers.
+
+      </p>
+
+      <p class="govuk-body">
+
+          It is currently based on HMRC Pay As You Earn (PAYE) data from the 2015/2016 tax year. This data is broken down by local authority district.
+
+      </p>
+
+      <p class="govuk-body">
+
+          You can use the visualisations and tables in this tool to find information about:
+
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+          <li>The <strong>number of employees</strong> living in a local authorty district by employer</li>
+
+          <li><strong>Employer salaries</strong> by location</li>
+
+          <li><strong>Growth or contraction</strong> of an employers workforce living in a location (this measure is experimental)</li>
+
+          <li>The <strong>geographic spread</strong> of employers and employees</li>
+
+          </ul>
+
+      <a href="search" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-4">
+
+        Start now
+
+      </a>
+
+  </div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+
+{% endblock %}

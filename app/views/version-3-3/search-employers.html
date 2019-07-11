@@ -1,0 +1,113 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manhattan
+{% endblock %}
+
+{% block content %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item" aria-current="page">Home</li>
+          </ol>
+      </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+              <p class="govuk-body  govuk-!-font-size-16 govuk-!-margin-top-2" align="right">Currently logged in as</br><strong>Pete Jobes</strong> - <a href='/logout'>Log out</a></p>
+   </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+<div class="govuk-grid-column-two-thirds">
+
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Which employer would you like to find out about?
+      </h1>
+    </legend>
+
+    <div class="govuk-form-group">
+      <label class="govuk-hint" for="autocomplete-emp">
+        These may be names of PAYE parent companies, trimmed to 32 characters.
+      </label>
+      <div class="govuk-form-group">
+        <div id="autocomplete-emp" name="autocomplete-emp"></div>
+        <a href="emp-bgw" role="button" draggable="false" class="govuk-button govuk-!-margin-top-4">Submit</a>
+      </div>
+    </div>
+
+    </fieldset>
+      
+  </div>    
+   
+</div>
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script type="text/javascript">
+  
+    /*global accessibleAutocomplete*/
+  
+
+  function customResultsEmp (query, matchedResults) {
+      var results = [
+      
+      { areatype: 'Local authority', name: 'BROADSTREET GREAT WILSON (EUROPE)' },
+      { areatype: 'Local authority', name: 'WHITBREAD GRP PLC INCL WHITBREAD' },
+      { areatype: 'Local authority', name: 'BRITISH UNITED PROVIDENT' },
+      { areatype: 'Local authority', name: 'GREENE KING PLC INCL BREWING' },
+      { areatype: 'Local authority', name: 'BRITISH AIRWAYS PLC INCL BRITISH' },
+      { areatype: 'Local authority', name: 'BROOK STREET (UK) LTD INCL BAFIN' },
+      { areatype: 'Local authority', name: 'ICELAND FOODS LTD INCL ALL GRP MBR' },
+      { areatype: 'Local authority', name: 'SERCO GRP PLC INCL ALL VAT GRP MBR' },
+      { areatype: 'Local authority', name: 'ABERTAWE BRO MORGANNWG UNIVERSITY' },
+      { areatype: 'Local authority', name: 'BRITISH BUS PLC INCL ALL VAT GROUP' }
+      
+      ]
+      const checkMatch = results.filter(result => 
+       result.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 // || result.areatype.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      )
+      matchedResults(checkMatch)
+    }
+
+  function inputValueTemplate (result) {
+    return result && result.name
+  }
+
+  function suggestionTemplate (result) {
+    return result && '<span class=\'areaname\'>' + result.name + '</span>'
+  }
+    
+
+  var element = document.querySelector('#autocomplete-emp');
+  accessibleAutocomplete({
+    element: element,
+    id: 'autocomplete-class',
+    placeholder: 'Start typing an employer name...',
+    showAllValues: 'true',
+    source: customResultsEmp,
+    templates: {
+        inputValue: inputValueTemplate,
+        suggestion: suggestionTemplate
+    }
+  });
+
+</script>
+
+{% endblock %}
