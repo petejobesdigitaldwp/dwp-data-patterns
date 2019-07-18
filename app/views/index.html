@@ -1,32 +1,44 @@
-{% extends "dwp-prototype-index-page.html" %}
 
-{% block summaries %}
+{% extends "layout.html" %}
 
-  {{dwpPrototypeSummaries([
-    {
-      dateOfRelease: "2 Apr 2019",
-      feature: "Manhattan",
-      jiraStory: "-",
-      link: "/version-3-2/",
-      changes: [
-        "First loop through design review."
-      ],
-      research: [
-        " "
-      ]
-    },
-    {
-      dateOfRelease: "2 Apr 2019",
-      feature: "Manhattan",
-      jiraStory: "-",
-      link: "/version-3-1/",
-      changes: [
-        "As per Daniel's flask work."
-      ],
-      research: [
-        " "
-      ]
-    }
-  ])}}
+{% block pageTitle %}
+  DWP | Designing with data
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+
+<div class="govuk-grid-row">
+  <nav class="navigation-global">
+    <ul>
+      <li>
+        <a href="#" class="active" aria-current="page">Get started</a>
+      </li>
+
+      <li>
+        <a href="#">Components</a>
+      </li>
+
+      <li>
+        <a href="#">Patterns</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Design with data using DWP components and patterns.
+      </h1>
+      <p class="govuk-body-l">
+        Use this guide to make your data services consistent with other DWP services. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.
+      </p>      
+    </div>
+</div>
 
 {% endblock %}
